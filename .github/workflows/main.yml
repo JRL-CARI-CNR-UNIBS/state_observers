@@ -3,10 +3,10 @@ name: main
 on:
   pull_request:
     branches:
-      - main
+      - master
   push:
     branches:
-      - main
+      - master
 jobs:
   build-and-test:
     runs-on: ${{ matrix.os }}
