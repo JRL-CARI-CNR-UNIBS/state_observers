@@ -20,10 +20,10 @@ jobs:
         with:
           required-ros-distributions: rolling
       - name: build and test
-        uses: ros-tooling/action-ros-ci@0.3.3
+        uses: ros-tooling/action-ros-ci@0.3.6
         with:
-          package-name: arm bt_test hri motion perception robocup_bringup cs4home_core
-          target-ros2-distro: humble
+          package-name: state_observers
+          target-ros2-distro: rolling
           colcon-defaults: |
             {
               "test": {
