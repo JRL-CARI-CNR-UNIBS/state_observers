@@ -15,8 +15,6 @@
 #include <gtest/gtest.h>
 
 #include "state_observers/state_observer.hpp"
-#include "state_observers/luenberger.hpp"
-#include "state_observers/kalman_filter.hpp"
 
 class StateObserverDummy : public state_observer::StateObserver
 {
