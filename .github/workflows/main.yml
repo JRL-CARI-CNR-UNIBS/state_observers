@@ -1,0 +1,32 @@
+name: main
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+jobs:
+  build-and-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-22.04]
+      fail-fast: false
+    steps:
+      - name: Setup ROS 2
+        uses: ros-tooling/setup-ros@0.7.0
+        with:
+          required-ros-distributions: rolling
+      - name: build and test
+        uses: ros-tooling/action-ros-ci@0.3.3
+        with:
+          package-name: arm bt_test hri motion perception robocup_bringup cs4home_core
+          target-ros2-distro: humble
+          colcon-defaults: |
+            {
+              "test": {
+                "parallel-workers" : 1
+              }
+            }
