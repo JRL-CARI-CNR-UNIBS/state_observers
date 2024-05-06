@@ -31,15 +31,15 @@ public:
 
   Eigen::MatrixXd update(const Eigen::VectorXd & measurement) override
   {
-    auto avoid_worning = measurement;
+    auto avoid_warning = measurement;
     return Eigen::MatrixXd();
   }
   Eigen::MatrixXd update(
     const Eigen::VectorXd & measurement,
     const Eigen::VectorXd & input) override
   {
-    auto avoid_worning_measurement = measurement;
-    auto avoid_worning_input = input;
+    auto avoid_warning_measurement = measurement;
+    auto avoid_warning_input = input;
     return Eigen::MatrixXd();
   }
 };
