@@ -37,7 +37,7 @@ public:
 
   virtual ~StateObserver() {}
   void initialize(const Eigen::VectorXd & initial_state);
-  Eigen::VectorXd open_loop_update();
+  virtual Eigen::VectorXd open_loop_update();
   virtual Eigen::MatrixXd update(const Eigen::VectorXd & measurement) = 0;
   virtual Eigen::MatrixXd update(
     const Eigen::VectorXd & measurement,

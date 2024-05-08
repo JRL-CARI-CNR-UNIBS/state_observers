@@ -40,10 +40,10 @@ public:
     const Eigen::MatrixXd & L);
 
   void set_observer_gain(const Eigen::MatrixXd & L);
-  Eigen::MatrixXd update(const Eigen::VectorXd & measurement);
+  Eigen::MatrixXd update(const Eigen::VectorXd & measurement) override;
   Eigen::MatrixXd update(
     const Eigen::VectorXd & measurement,
-    const Eigen::VectorXd & input);
+    const Eigen::VectorXd & input) override;
 
 protected:
   Eigen::VectorXd L_;

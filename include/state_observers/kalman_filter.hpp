@@ -39,11 +39,11 @@ public:
     const Eigen::MatrixXd & C,
     const Eigen::MatrixXd & Q, const Eigen::MatrixXd & R);
 
-  Eigen::MatrixXd update(const Eigen::VectorXd & measurement);
+  Eigen::MatrixXd update(const Eigen::VectorXd & measurement) override;
   Eigen::MatrixXd update(
     const Eigen::VectorXd & measurement,
-    const Eigen::VectorXd & input);
-  Eigen::VectorXd open_loop_update();
+    const Eigen::VectorXd & input) override;
+  Eigen::VectorXd open_loop_update() override;
   void update_process_covariance(const Eigen::MatrixXd & new_Q);
   void update_measurement_covariance(const Eigen::MatrixXd & new_R);
   void update_qr(const Eigen::MatrixXd & new_Q, const Eigen::MatrixXd & new_R);
