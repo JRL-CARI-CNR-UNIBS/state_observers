@@ -38,7 +38,23 @@ public:
     const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
     const Eigen::MatrixXd & C,
     const Eigen::MatrixXd & Q, const Eigen::MatrixXd & R);
-
+  KalmanFilter(
+    const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+    const Eigen::MatrixXd & C, const Eigen::MatrixXd & D,
+    const Eigen::VectorXd & initial_state,
+    const Eigen::MatrixXd & Q, const Eigen::MatrixXd & R,
+    const Eigen::MatrixXd & P0);
+  KalmanFilter(
+    const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+    const Eigen::MatrixXd & C,
+    const Eigen::VectorXd & initial_state,
+    const Eigen::MatrixXd & Q, const Eigen::MatrixXd & R,
+    const Eigen::MatrixXd & P0);
+  KalmanFilter(
+    const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+    const Eigen::MatrixXd & C,
+    const Eigen::MatrixXd & Q, const Eigen::MatrixXd & R,
+    const Eigen::MatrixXd & P0);
   Eigen::MatrixXd update(const Eigen::VectorXd & measurement) override;
   Eigen::MatrixXd update(
     const Eigen::VectorXd & measurement,
@@ -47,6 +63,7 @@ public:
   void update_process_covariance(const Eigen::MatrixXd & new_Q);
   void update_measurement_covariance(const Eigen::MatrixXd & new_R);
   void update_qr(const Eigen::MatrixXd & new_Q, const Eigen::MatrixXd & new_R);
+  Eigen::VectorXd get_state_variance();
 
 protected:
   Eigen::VectorXd L_;

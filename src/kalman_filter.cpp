@@ -30,6 +30,7 @@ KalmanFilter::KalmanFilter(
     throw e;
   }
   I_ = Eigen::MatrixXd::Identity(A_.rows(), A_.cols());
+  P_ = Eigen::MatrixXd::Zero(A.rows(), A.cols());
 }
 
 KalmanFilter::KalmanFilter(
@@ -45,6 +46,7 @@ KalmanFilter::KalmanFilter(
     throw e;
   }
   I_ = Eigen::MatrixXd::Identity(A_.rows(), A_.cols());
+  P_ = Eigen::MatrixXd::Zero(A.rows(), A.cols());
 }
 
 KalmanFilter::KalmanFilter(
@@ -59,6 +61,69 @@ KalmanFilter::KalmanFilter(
     throw e;
   }
   I_ = Eigen::MatrixXd::Identity(A_.rows(), A_.cols());
+  P_ = Eigen::MatrixXd::Zero(A.rows(), A.cols());
+}
+
+KalmanFilter::KalmanFilter(
+  const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+  const Eigen::MatrixXd & C, const Eigen::MatrixXd & D,
+  const Eigen::VectorXd & initial_state,
+  const Eigen::MatrixXd & Q, const Eigen::MatrixXd & R,
+  const Eigen::MatrixXd & P0)
+: StateObserver(A, B, C, D, initial_state)
+{
+  try {
+    update_qr(Q, R);
+  } catch (const std::invalid_argument & e) {
+    throw e;
+  }
+  I_ = Eigen::MatrixXd::Identity(A_.rows(), A_.cols());
+
+  if (P0.rows() != A.rows() || P0.cols() != A.cols()) {
+    throw std::invalid_argument("Initial covariance matrix must have dimensions n x n.");
+  }
+  P_ = P0;
+}
+
+KalmanFilter::KalmanFilter(
+  const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+  const Eigen::MatrixXd & C,
+  const Eigen::VectorXd & initial_state,
+  const Eigen::MatrixXd & Q, const Eigen::MatrixXd & R,
+  const Eigen::MatrixXd & P0)
+: StateObserver(A, B, C, initial_state)
+{
+  try {
+    update_qr(Q, R);
+  } catch (const std::invalid_argument & e) {
+    throw e;
+  }
+  I_ = Eigen::MatrixXd::Identity(A_.rows(), A_.cols());
+
+  if (P0.rows() != A.rows() || P0.cols() != A.cols()) {
+    throw std::invalid_argument("Initial covariance matrix must have dimensions n x n.");
+  }
+  P_ = P0;
+}
+
+KalmanFilter::KalmanFilter(
+  const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+  const Eigen::MatrixXd & C,
+  const Eigen::MatrixXd & Q, const Eigen::MatrixXd & R,
+  const Eigen::MatrixXd & P0)
+: StateObserver(A, B, C)
+{
+  try {
+    update_qr(Q, R);
+  } catch (const std::invalid_argument & e) {
+    throw e;
+  }
+  I_ = Eigen::MatrixXd::Identity(A_.rows(), A_.cols());
+
+  if (P0.rows() != A.rows() || P0.cols() != A.cols()) {
+    throw std::invalid_argument("Initial covariance matrix must have dimensions n x n.");
+  }
+  P_ = P0;
 }
 
 Eigen::MatrixXd KalmanFilter::update(const Eigen::VectorXd & measurement)
@@ -122,6 +187,10 @@ void KalmanFilter::update_qr(
   }
   Q_ = new_Q;
   R_ = new_R;
+}
+Eigen::VectorXd KalmanFilter::get_state_variance()
+{
+  return P_.diagonal();
 }
 
 }  // namespace state_observer

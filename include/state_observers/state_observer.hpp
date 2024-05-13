@@ -37,6 +37,7 @@ public:
 
   virtual ~StateObserver() {}
   void initialize(const Eigen::VectorXd & initial_state);
+  void set_initial_state(const Eigen::VectorXd & initial_state);
   virtual Eigen::VectorXd open_loop_update();
   virtual Eigen::MatrixXd update(const Eigen::VectorXd & measurement) = 0;
   virtual Eigen::MatrixXd update(
@@ -44,10 +45,12 @@ public:
     const Eigen::VectorXd & input) = 0;
   inline Eigen::VectorXd get_state() const {return x_;}
   inline Eigen::VectorXd get_output() const {return C_ * x_;}
+  inline bool is_initialized() const {return initialized_;}
 
 protected:
   Eigen::MatrixXd A_, B_, C_, D_;
   Eigen::VectorXd x_, y_;
+  bool initialized_ = false;
 };
 
 }  // namespace state_observer

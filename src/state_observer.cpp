@@ -67,6 +67,7 @@ void StateObserver::initialize(const Eigen::VectorXd & initial_state)
   }
 
   x_ = initial_state;
+  initialized_ = true;
 }
 
 Eigen::VectorXd StateObserver::open_loop_update()
