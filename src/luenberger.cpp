@@ -16,50 +16,6 @@
 
 namespace state_observer
 {
-// Luenberger::Luenberger(const Eigen::MatrixXd& A, const Eigen::MatrixXd& B,
-//                        const Eigen::MatrixXd& C, const Eigen::MatrixXd& D,
-//                        const Eigen::VectorXd& initial_state,
-//                        const Eigen::MatrixXd& L)
-// {
-//     // try {
-//     //     StateObserver(A, B, C, D, initial_state);
-//     // } catch (const std::invalid_argument& e) {
-//     //     throw e;
-//     // }
-//     if(L.rows() != A.rows() || L.cols() != C.rows()) {
-//         throw std::invalid_argument("Observer gain matrix must have dimensions n x q.");
-//     }
-//     L_ = L;
-// }
-// Luenberger::Luenberger(const Eigen::MatrixXd& A, const Eigen::MatrixXd& B,
-//                        const Eigen::MatrixXd& C,
-//                        const Eigen::VectorXd& initial_state,
-//                        const Eigen::MatrixXd& L)
-// {
-//     // try {
-//     //     StateObserver::StateObserver(A, B, C, initial_state);
-//     // } catch (const std::invalid_argument& e) {
-//     //     throw e;
-//     // }
-//     if(L.rows() != A.rows() || L.cols() != C.rows()) {
-//         throw std::invalid_argument("Observer gain matrix must have dimensions n x q.");
-//     }
-//     L_ = L;
-// }
-// Luenberger::Luenberger(const Eigen::MatrixXd& A, const Eigen::MatrixXd& B,
-//                        const Eigen::MatrixXd& C,
-//                        const Eigen::MatrixXd& L)
-// {
-//     // try {
-//     //     StateObserver::StateObserver(A, B, C);
-//     // } catch (const std::invalid_argument& e) {
-//     //     throw e;
-//     // }
-//     if(L.rows() != A.rows() || L.cols() != C.rows()) {
-//         throw std::invalid_argument("Observer gain matrix must have dimensions n x q.");
-//     }
-//     L_ = L;
-// }
 
 Luenberger::Luenberger(
   const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,

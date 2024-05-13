@@ -14,15 +14,14 @@ set(CMAKE_CXX_STANDARD 17)
 set(dependencies
   Eigen3
 )
-include_directories(include
-                    ${EIGEN3_INCLUDE_DIRS})
+include_directories(include)
 
 add_library(${PROJECT_NAME} SHARED
   src/state_observer.cpp
   src/luenberger.cpp
   src/kalman_filter.cpp)
-
 ament_target_dependencies(${PROJECT_NAME} ${dependencies})
+target_link_libraries(${PROJECT_NAME} Eigen3::Eigen)
 
 install(DIRECTORY include/
   DESTINATION include/
