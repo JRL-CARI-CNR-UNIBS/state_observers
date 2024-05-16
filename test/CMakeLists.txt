@@ -3,3 +3,9 @@ target_link_libraries(state_observers_test
   ${PROJECT_NAME}
 )
 ament_target_dependencies(state_observers_test ${dependencies})
+
+ament_add_gtest(kalman_filter_test kalman_filter_test.cpp)
+target_link_libraries(kalman_filter_test
+  ${PROJECT_NAME}
+)
+ament_target_dependencies(kalman_filter_test ${dependencies})

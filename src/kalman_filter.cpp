@@ -182,7 +182,7 @@ void KalmanFilter::update_qr(
   if (new_Q.rows() != A_.rows() || new_Q.cols() != A_.cols()) {
     throw std::invalid_argument("Process covariance matrix must have dimensions n x n.");
   }
-  if (new_R.rows() != C_.rows() || new_R.cols() != C_.cols()) {
+  if (new_R.rows() != C_.rows() || new_R.cols() != C_.rows()) {
     throw std::invalid_argument("Measurement covariance matrix must have dimensions q x q.");
   }
   Q_ = new_Q;
