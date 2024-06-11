@@ -77,4 +77,14 @@ Eigen::VectorXd StateObserver::open_loop_update()
   return y_;
 }
 
+void StateObserver::set_state_transition_matrix(const Eigen::MatrixXd & A)
+{
+  if (A.rows() != A_.cols() && A.cols() != A_.cols()) {
+    throw std::invalid_argument("Matrix A must be square of size n x n.");
+  }
+
+  A_ = A;
+}
+
+
 }  // namespace state_observer

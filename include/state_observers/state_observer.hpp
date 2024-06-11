@@ -46,6 +46,7 @@ public:
   inline Eigen::VectorXd get_state() const {return x_;}
   inline Eigen::VectorXd get_output() const {return C_ * x_;}
   inline bool is_initialized() const {return initialized_;}
+  void set_state_transition_matrix(const Eigen::MatrixXd & A);
 
 protected:
   Eigen::MatrixXd A_, B_, C_, D_;
