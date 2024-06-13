@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include "state_observers/luenberger.hpp"
+#include <iostream>
 
 namespace state_observer
 {
@@ -81,6 +82,11 @@ Eigen::MatrixXd Luenberger::update(
 
   y_ = C_ * x_ + D_ * input;
   x_ = A_ * x_ + B_ * input + L_ * (measurement - y_);
+  std::cerr << "x_ = " << x_[0] << std::endl;
+  std::cerr << "L_ = " << L_[0] << std::endl;
+  std::cerr << "measurement = " << measurement[0] << std::endl;
+  std::cerr << "y_ = " << y_[0] << std::endl;
+
   return y_;
 }
 

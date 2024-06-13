@@ -8,11 +8,15 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
 
 set(dependencies
   Eigen3
+  rclcpp
+  std_msgs
 )
 include_directories(include)
 
@@ -28,7 +32,7 @@ install(DIRECTORY include/
 )
 install(TARGETS
   ${PROJECT_NAME}
-  EXPORT ${PROJECT_NAME}
+  # EXPORT ${PROJECT_NAME}
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}
@@ -42,11 +46,11 @@ if(BUILD_TESTING)
 endif()
 
 ament_export_include_directories(include)
-ament_export_dependencies(${dependencies})
 ament_export_libraries(${PROJECT_NAME})
-ament_export_targets(
-  ${PROJECT_NAME}
-  HAS_LIBRARY_TARGET
-)
+ament_export_dependencies(${dependencies})
+# ament_export_targets(
+#   ${PROJECT_NAME}
+#   HAS_LIBRARY_TARGET
+# )
 
 ament_package()

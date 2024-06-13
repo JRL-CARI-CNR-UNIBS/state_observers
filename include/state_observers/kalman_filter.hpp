@@ -63,7 +63,7 @@ public:
   void update_process_covariance(const Eigen::MatrixXd & new_Q);
   void update_measurement_covariance(const Eigen::MatrixXd & new_R);
   void update_qr(const Eigen::MatrixXd & new_Q, const Eigen::MatrixXd & new_R);
-  Eigen::VectorXd get_state_variance();
+  Eigen::VectorXd get_state_variance() override;
 
 protected:
   Eigen::VectorXd L_;
