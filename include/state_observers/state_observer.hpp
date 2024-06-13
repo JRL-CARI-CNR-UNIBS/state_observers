@@ -46,11 +46,8 @@ public:
   inline Eigen::VectorXd get_state() const {return x_;}
   inline Eigen::VectorXd get_output() const {return C_ * x_;}
   inline bool is_initialized() const {return initialized_;}
-<<<<<<< HEAD
   virtual Eigen::VectorXd get_state_variance() {throw std::runtime_error("Not implemented.");}
-=======
   void set_state_transition_matrix(const Eigen::MatrixXd & A);
->>>>>>> 58e5b168c7fd9a59a9568a68215611f73d43112a
 
 protected:
   Eigen::MatrixXd A_, B_, C_, D_;
