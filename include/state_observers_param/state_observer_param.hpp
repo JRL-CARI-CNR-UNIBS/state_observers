@@ -27,20 +27,20 @@ namespace state_observer
 class StateObserverParam
 {
 public:
-  StateObserverParam();
+  StateObserverParam() {}
 
   virtual ~StateObserverParam() {}
   virtual void initialize(const rclcpp_lifecycle::LifecycleNode::SharedPtr & node);
 
-  Eigen::MatrixXd get_state_transition_matrix() {return A_;}
-  Eigen::MatrixXd get_input_matrix() {return B_;}
-  Eigen::MatrixXd get_output_matrix() {return C_;}
-  Eigen::MatrixXd get_feedforward_matrix() {return D_;}
-  Eigen::VectorXd get_initial_state() {return initial_state_;}
-  Eigen::MatrixXd get_A() {return A_;}
-  Eigen::MatrixXd get_B() {return B_;}
-  Eigen::MatrixXd get_C() {return C_;}
-  Eigen::MatrixXd get_D() {return D_;}
+  inline Eigen::MatrixXd get_state_transition_matrix() {return A_;}
+  inline Eigen::MatrixXd get_input_matrix() {return B_;}
+  inline Eigen::MatrixXd get_output_matrix() {return C_;}
+  inline Eigen::MatrixXd get_feedforward_matrix() {return D_;}
+  inline Eigen::VectorXd get_initial_state() {return initial_state_;}
+  inline Eigen::MatrixXd get_A() {return A_;}
+  inline Eigen::MatrixXd get_B() {return B_;}
+  inline Eigen::MatrixXd get_C() {return C_;}
+  inline Eigen::MatrixXd get_D() {return D_;}
 
 protected:
   rclcpp_lifecycle::LifecycleNode::SharedPtr node_;

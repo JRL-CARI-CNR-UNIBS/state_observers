@@ -28,7 +28,7 @@ namespace state_observer
 class KalmanFilterParam : public StateObserverParam
 {
 public:
-  KalmanFilterParam();
+  KalmanFilterParam() {}
 
   virtual ~KalmanFilterParam() {}
   virtual void initialize(const rclcpp_lifecycle::LifecycleNode::SharedPtr & node);
@@ -44,3 +44,8 @@ protected:
 }  // namespace state_observer
 
 #endif  // STATE_OBSERVERS_PARAM__KALMAN_FILTER_PARAM_HPP_
+
+#include <pluginlib/class_list_macros.hpp>
+PLUGINLIB_EXPORT_CLASS(
+  state_observer::KalmanFilterParam,
+  state_observer::StateObserverParam)

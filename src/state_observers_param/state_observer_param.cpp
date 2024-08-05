@@ -22,7 +22,6 @@ StateObserverParam::initialize(
   const rclcpp_lifecycle::LifecycleNode::SharedPtr & node)
 {
   node_ = node;
-
   fully_declare_parameter("state_size", rclcpp::PARAMETER_INTEGER, "Size of the state vector.");
   fully_declare_parameter("input_size", rclcpp::PARAMETER_INTEGER, "Size of the input vector.");
   fully_declare_parameter("output_size", rclcpp::PARAMETER_INTEGER, "Size of the output vector.");
@@ -34,16 +33,20 @@ StateObserverParam::initialize(
   fully_declare_parameter(
     "feedforward_matrix", rclcpp::PARAMETER_DOUBLE_ARRAY,
     "Feedthrough matrix (D).");
+  fully_declare_parameter("initial_state", rclcpp::PARAMETER_DOUBLE_ARRAY, "Initial state.");
 
   std::vector<double> flat_A, flat_B, flat_C, flat_D, initial_state;
   int state_size, input_size, output_size;
 
+  node_->get_parameter("state_size", state_size);
   if (!node_->get_parameter("state_size", state_size)) {
     throw std::runtime_error("Failed to get state_size parameter.");
   }
+
   if (!node_->get_parameter("input_size", input_size)) {
     throw std::runtime_error("Failed to get input_size parameter.");
   }
+
   if (!node_->get_parameter("output_size", output_size)) {
     throw std::runtime_error("Failed to get output_size parameter.");
   }
@@ -55,13 +58,12 @@ StateObserverParam::initialize(
     throw std::runtime_error("State transition matrix has wrong size.");
   }
 
-  Eigen::Map<Eigen::MatrixXd> A_(flat_A.data(), state_size, state_size);
-
+  A_ = Eigen::Map<Eigen::MatrixXd>(flat_A.data(), state_size, state_size);
   if (node_->get_parameter("input_matrix", flat_B)) {
     if (flat_B.size() != state_size * input_size) {
       throw std::runtime_error("Input matrix has wrong size.");
     }
-    Eigen::Map<Eigen::MatrixXd> B_(flat_B.data(), state_size, input_size);
+    B_ = Eigen::Map<Eigen::MatrixXd>(flat_B.data(), state_size, input_size);
   } else {
     B_ = Eigen::MatrixXd::Zero(state_size, input_size);
   }
@@ -72,13 +74,12 @@ StateObserverParam::initialize(
   if (flat_C.size() != output_size * state_size) {
     throw std::runtime_error("Output matrix has wrong size.");
   }
-  Eigen::Map<Eigen::MatrixXd> C_(flat_C.data(), output_size, state_size);
-
+  C_ = Eigen::Map<Eigen::MatrixXd>(flat_C.data(), output_size, state_size);
   if (node_->get_parameter("feedforward_matrix", flat_D)) {
     if (flat_D.size() != output_size * input_size) {
       throw std::runtime_error("Feedthrough matrix has wrong size.");
     }
-    Eigen::Map<Eigen::MatrixXd> D_(flat_D.data(), output_size, input_size);
+    D_ = Eigen::Map<Eigen::MatrixXd>(flat_D.data(), output_size, input_size);
   } else {
     D_ = Eigen::MatrixXd::Zero(output_size, input_size);
   }
@@ -101,17 +102,7 @@ StateObserverParam::fully_declare_parameter(
   rcl_interfaces::msg::ParameterDescriptor desc;
   desc.set__description(description);
   desc.type = type;
-
-  switch (type) {
-    case rclcpp::PARAMETER_DOUBLE:
-      node_->declare_parameter<double>(param_name, desc);
-      break;
-    case rclcpp::PARAMETER_DOUBLE_ARRAY:
-      node_->declare_parameter<std::vector<double>>(param_name, desc);
-      break;
-    default:
-      throw std::runtime_error("Unknown parameter type.");
-  }
+  node_->declare_parameter(param_name, type, desc);
 }
 
 

@@ -27,7 +27,7 @@ namespace state_observer
 class LuenbergerParam : public StateObserverParam
 {
 public:
-  LuenbergerParam();
+  LuenbergerParam() {}
   virtual ~LuenbergerParam() {}
 
   virtual void initialize(const rclcpp_lifecycle::LifecycleNode::SharedPtr & node);
@@ -41,3 +41,8 @@ protected:
 }  // namespace state_observer
 
 #endif  // STATE_OBSERVERS_PARAM__LUENBERGER_PARAM_HPP_
+
+#include <pluginlib/class_list_macros.hpp>
+PLUGINLIB_EXPORT_CLASS(
+  state_observer::LuenbergerParam,
+  state_observer::StateObserverParam)
