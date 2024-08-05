@@ -35,10 +35,10 @@ public:
 
   Eigen::MatrixXd get_R() {return R_;}
   Eigen::MatrixXd get_Q() {return Q_;}
-  Eigen::MatrixXd get_P0() {return P0;}
+  Eigen::MatrixXd get_P0() {return P0_;}
 
 protected:
-  Eigen::MatrixXd R_, Q_, P0;
+  Eigen::MatrixXd R_, Q_, P0_;
 };
 
 }  // namespace state_observer

@@ -43,6 +43,8 @@ install(TARGETS
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
+pluginlib_export_plugin_description_file(state_observers state_observers_param_plugins.xml)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

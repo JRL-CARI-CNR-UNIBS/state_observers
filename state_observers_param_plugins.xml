@@ -1,0 +1,8 @@
+<library path="state_observers">
+  <class type="state_observer::LuenbergerParam" base_class_type="state_observer::StateObserverParam">
+    <description>This is a plugin for Luenberger Param ROS2 Loader</description>
+  </class>
+  <class type="state_observer::KalmanFilterParam" base_class_type="state_observer::StateObserverParam">
+    <description>This is a plugin for Kalman Filter Param ROS2 Loader</description>
+  </class>
+</library>

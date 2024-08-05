@@ -56,9 +56,9 @@ KalmanFilterParam::initialize(
     throw std::runtime_error("Initial state covariance matrix has wrong size.");
   }
 
-  Eigen::Map<Eigen::MatrixXd> Q_(flat_Q.data(), A_.rows(), A_.rows());
-  Eigen::Map<Eigen::MatrixXd> R_(flat_R.data(), C_.rows(), C_.rows());
-  Eigen::Map<Eigen::MatrixXd> P0_(flat_P0.data(), A_.rows(), A_.rows());
+  Q_ = Eigen::Map<Eigen::MatrixXd>(flat_Q.data(), A_.rows(), A_.rows());
+  R_ = Eigen::Map<Eigen::MatrixXd>(flat_R.data(), C_.rows(), C_.rows());
+  P0_ = Eigen::Map<Eigen::MatrixXd>(flat_P0.data(), A_.rows(), A_.rows());
 }
 
 
