@@ -192,7 +192,7 @@ TEST(KalmanFilterTest, KalmanFilterPlugin)
     state_observer =
       state_observer_loader->createSharedInstance(
       "state_observer::KalmanFilter");
-    std::cerr << "state_observer::KalmanFIilter" << std::endl;
+    std::cerr << "state_observer::KalmanFilter" << std::endl;
   } catch (pluginlib::PluginlibException & ex) {
     std::cerr << "The plugin failed to load for some reason. Error: " << ex.what() << std::endl;
   }
@@ -325,9 +325,9 @@ TEST(KalmanFilterTest, KalmanFilterAndParamPlugin)
   std::shared_ptr<pluginlib::ClassLoader<state_observer::StateObserverParam>>
   state_observer_param_loader;
   state_observer_param_loader.reset(
-    new pluginlib::ClassLoader<state_observer::StateObserver>(
+    new pluginlib::ClassLoader<state_observer::StateObserverParam>(
       "state_observers",
-      "state_observer::StateObserverPara,"));
+      "state_observer::StateObserverParam"));
   std::shared_ptr<state_observer::StateObserverParam> state_observer_param;
 
   try {
