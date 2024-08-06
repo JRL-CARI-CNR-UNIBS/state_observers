@@ -22,21 +22,12 @@ StateObserver::StateObserver(
   const Eigen::MatrixXd & C, const Eigen::MatrixXd & D,
   const Eigen::VectorXd & initial_state)
 {
-  if (A.rows() != A.cols()) {
-    throw std::invalid_argument("Matrix A must be square of size n x n.");
+  try {
+    dimensions_check(A, B, C, D, initial_state);
+  } catch (const std::invalid_argument & e) {
+    throw e;
   }
-  if (B.rows() != A.rows()) {
-    throw std::invalid_argument("Matrix B must have dimensions n x p.");
-  }
-  if (C.cols() != A.rows()) {
-    throw std::invalid_argument("Matrix C must have dimensions q x n.");
-  }
-  if (D.cols() != B.cols() || D.rows() != C.rows()) {
-    throw std::invalid_argument("Matrix D must have dimensions q x p.");
-  }
-  if (initial_state.size() != A.rows()) {
-    throw std::invalid_argument("Initial state vector must have size n.");
-  }
+
   // if (y_.size() != C_.rows()) {
   //   throw std::invalid_argument("Initial output vector must have size q.");
   // }
@@ -86,5 +77,27 @@ void StateObserver::set_state_transition_matrix(const Eigen::MatrixXd & A)
   A_ = A;
 }
 
+void
+StateObserver::dimensions_check(
+  const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+  const Eigen::MatrixXd & C, const Eigen::MatrixXd & D,
+  const Eigen::VectorXd & initial_state)
+{
+  if (A.rows() != A.cols()) {
+    throw std::invalid_argument("Matrix A must be square of size n x n.");
+  }
+  if (B.rows() != A.rows()) {
+    throw std::invalid_argument("Matrix B must have dimensions n x p.");
+  }
+  if (C.cols() != A.rows()) {
+    throw std::invalid_argument("Matrix C must have dimensions q x n.");
+  }
+  if (D.cols() != B.cols() || D.rows() != C.rows()) {
+    throw std::invalid_argument("Matrix D must have dimensions q x p.");
+  }
+  if (initial_state.size() != A.rows()) {
+    throw std::invalid_argument("Initial state vector must have size n.");
+  }
+}
 
 }  // namespace state_observer

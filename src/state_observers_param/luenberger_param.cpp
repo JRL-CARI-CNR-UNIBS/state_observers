@@ -35,5 +35,11 @@ LuenbergerParam::initialize(
   L_ = Eigen::Map<Eigen::MatrixXd>(flat_L.data(), A_.rows(), C_.rows());
 }
 
+std::string
+LuenbergerParam::get_type() const
+{
+  return "Luenberger";
+}
+
 
 }  // namespace state_observer

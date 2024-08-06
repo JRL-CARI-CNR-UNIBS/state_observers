@@ -17,6 +17,7 @@
 
 #include <Eigen/Dense>
 #include <string>
+#include <memory>
 
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_lifecycle/lifecycle_node.hpp"
@@ -36,11 +37,15 @@ public:
   inline Eigen::MatrixXd get_input_matrix() {return B_;}
   inline Eigen::MatrixXd get_output_matrix() {return C_;}
   inline Eigen::MatrixXd get_feedforward_matrix() {return D_;}
-  inline Eigen::VectorXd get_initial_state() {return initial_state_;}
+  inline Eigen::VectorXd get_initial_state() const {return initial_state_;}
   inline Eigen::MatrixXd get_A() {return A_;}
   inline Eigen::MatrixXd get_B() {return B_;}
   inline Eigen::MatrixXd get_C() {return C_;}
   inline Eigen::MatrixXd get_D() {return D_;}
+  virtual std::string get_type() const {throw std::runtime_error("Not implemented.");}
+  // TODO(@samu) pure virtual and dummy in test
+
+  using SharedPtr = std::shared_ptr<StateObserverParam>;
 
 protected:
   rclcpp_lifecycle::LifecycleNode::SharedPtr node_;

@@ -17,6 +17,8 @@
 
 #include <Eigen/Dense>
 #include <state_observers/state_observer.hpp>
+#include <state_observers_param/kalman_filter_param.hpp>
+#include <state_observers_param/state_observer_param.hpp>
 
 namespace state_observer
 {
@@ -55,6 +57,11 @@ public:
     const Eigen::MatrixXd & C,
     const Eigen::MatrixXd & Q, const Eigen::MatrixXd & R,
     const Eigen::MatrixXd & P0);
+  KalmanFilter() {}
+  ~KalmanFilter() {}
+
+  void set_parameters(const StateObserverParam::SharedPtr state_observer_params) override;
+
   Eigen::MatrixXd update(const Eigen::VectorXd & measurement) override;
   Eigen::MatrixXd update(
     const Eigen::VectorXd & measurement,
@@ -73,3 +80,8 @@ protected:
 }  // namespace state_observer
 
 #endif  // STATE_OBSERVERS__KALMAN_FILTER_HPP_
+
+#include <pluginlib/class_list_macros.hpp>
+PLUGINLIB_EXPORT_CLASS(
+  state_observer::KalmanFilter,
+  state_observer::StateObserver)

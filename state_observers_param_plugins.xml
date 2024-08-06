@@ -5,4 +5,11 @@
   <class type="state_observer::KalmanFilterParam" base_class_type="state_observer::StateObserverParam">
     <description>This is a plugin for Kalman Filter Param ROS2 Loader</description>
   </class>
+
+  <class type="state_observer::KalmanFilter" base_class_type="state_observer::StateObserver">
+    <description>This is a plugin for Kalman Filter</description>
+  </class>
+  <class type="state_observer::Luenberger" base_class_type="state_observer::StateObserver">
+    <description>This is a plugin for Luenberger</description>
+  </class>
 </library>

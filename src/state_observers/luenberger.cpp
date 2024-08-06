@@ -56,6 +56,30 @@ Luenberger::Luenberger(
   L_ = L;
 }
 
+void
+Luenberger::set_parameters(const StateObserverParam::SharedPtr state_observer_params)
+{
+  if (state_observer_params->get_type() != "Luenberger") {
+    throw std::invalid_argument("State observer type must be Luenberger.");
+  }
+  LuenbergerParam::SharedPtr luenberger_params = std::dynamic_pointer_cast<LuenbergerParam>(
+    state_observer_params);
+
+  try {
+    StateObserver::dimensions_check(
+      luenberger_params->get_A(), luenberger_params->get_B(),
+      luenberger_params->get_C(), luenberger_params->get_D(),
+      luenberger_params->get_initial_state());
+  } catch (const std::invalid_argument & e) {
+    throw e;
+  }
+  try {
+    set_observer_gain(luenberger_params->get_Luenberger_gain());
+  } catch (const std::invalid_argument & e) {
+    throw e;
+  }
+}
+
 void Luenberger::set_observer_gain(const Eigen::MatrixXd & L)
 {
   if (L.rows() != A_.rows() || L.cols() != C_.rows()) {

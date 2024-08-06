@@ -16,10 +16,14 @@
 #define STATE_OBSERVERS_PARAM__LUENBERGER_PARAM_HPP_
 
 #include <Eigen/Dense>
+#include <memory>
+#include <string>
+
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_lifecycle/lifecycle_node.hpp"
 
 #include "state_observers_param/state_observer_param.hpp"
+
 
 namespace state_observer
 {
@@ -33,6 +37,9 @@ public:
   virtual void initialize(const rclcpp_lifecycle::LifecycleNode::SharedPtr & node);
 
   Eigen::MatrixXd get_Luenberger_gain() {return L_;}
+  std::string get_type() const override;
+
+  using SharedPtr = std::shared_ptr<LuenbergerParam>;
 
 protected:
   Eigen::MatrixXd L_;

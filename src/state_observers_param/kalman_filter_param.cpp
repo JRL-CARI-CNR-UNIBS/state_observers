@@ -61,5 +61,11 @@ KalmanFilterParam::initialize(
   P0_ = Eigen::Map<Eigen::MatrixXd>(flat_P0.data(), A_.rows(), A_.rows());
 }
 
+std::string
+KalmanFilterParam::get_type() const
+{
+  return "KalmanFilter";
+}
+
 
 }  // namespace state_observer

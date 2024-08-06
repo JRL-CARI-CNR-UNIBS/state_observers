@@ -16,6 +16,7 @@
 #define STATE_OBSERVERS__STATE_OBSERVER_HPP_
 
 #include <Eigen/Dense>
+#include <state_observers_param/state_observer_param.hpp>
 
 namespace state_observer
 {
@@ -34,8 +35,13 @@ public:
   StateObserver(
     const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
     const Eigen::MatrixXd & C);
+  StateObserver() {}
 
-  virtual ~StateObserver() {}
+  ~StateObserver() {}
+
+  virtual void set_parameters(const StateObserverParam::SharedPtr state_observer_params) {}
+  // TODO(@samu) Pure virtual and mandatory in inheritance
+
   void initialize(const Eigen::VectorXd & initial_state);
   void set_initial_state(const Eigen::VectorXd & initial_state);
   virtual Eigen::VectorXd open_loop_update();
@@ -53,6 +59,12 @@ protected:
   Eigen::MatrixXd A_, B_, C_, D_;
   Eigen::VectorXd x_, y_;
   bool initialized_ = false;
+
+  void dimensions_check(
+    const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+    const Eigen::MatrixXd & C, const Eigen::MatrixXd & D,
+    const Eigen::VectorXd & initial_state
+  );
 };
 
 }  // namespace state_observer

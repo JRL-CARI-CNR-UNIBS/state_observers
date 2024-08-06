@@ -16,11 +16,14 @@
 #define STATE_OBSERVERS_PARAM__KALMAN_FILTER_PARAM_HPP_
 
 #include <Eigen/Dense>
+#include <memory>
+#include <string>
+
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_lifecycle/lifecycle_node.hpp"
 
-
 #include "state_observers_param/state_observer_param.hpp"
+
 
 namespace state_observer
 {
@@ -36,6 +39,9 @@ public:
   Eigen::MatrixXd get_R() {return R_;}
   Eigen::MatrixXd get_Q() {return Q_;}
   Eigen::MatrixXd get_P0() {return P0_;}
+  std::string get_type() const override;
+
+  using SharedPtr = std::shared_ptr<KalmanFilterParam>;
 
 protected:
   Eigen::MatrixXd R_, Q_, P0_;
