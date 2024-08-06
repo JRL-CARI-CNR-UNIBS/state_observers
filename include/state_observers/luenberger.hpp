@@ -50,6 +50,8 @@ public:
     const Eigen::VectorXd & measurement,
     const Eigen::VectorXd & input) override;
 
+  inline Eigen::MatrixXd get_observer_gain() const {return L_;}
+
 protected:
   Eigen::VectorXd L_;
 };

@@ -36,7 +36,7 @@ public:
 
   virtual void initialize(const rclcpp_lifecycle::LifecycleNode::SharedPtr & node);
 
-  Eigen::MatrixXd get_Luenberger_gain() {return L_;}
+  Eigen::MatrixXd get_observer_gain() {return L_;}
   std::string get_type() const override;
 
   using SharedPtr = std::shared_ptr<LuenbergerParam>;

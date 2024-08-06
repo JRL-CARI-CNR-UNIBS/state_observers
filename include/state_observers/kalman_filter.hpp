@@ -72,6 +72,10 @@ public:
   void update_qr(const Eigen::MatrixXd & new_Q, const Eigen::MatrixXd & new_R);
   Eigen::VectorXd get_state_variance() override;
 
+  inline Eigen::MatrixXd get_Q() const {return Q_;}
+  inline Eigen::MatrixXd get_R() const {return R_;}
+  inline Eigen::MatrixXd get_P0() const {return P_;}
+
 protected:
   Eigen::VectorXd L_;
   Eigen::MatrixXd P_, K_, Q_, R_, I_;

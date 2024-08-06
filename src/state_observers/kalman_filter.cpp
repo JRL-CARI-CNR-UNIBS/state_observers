@@ -143,6 +143,12 @@ KalmanFilter::set_parameters(const StateObserverParam::SharedPtr state_observer_
   } catch (const std::invalid_argument & e) {
     throw e;
   }
+  A_ = kalman_filter_params->get_A();
+  B_ = kalman_filter_params->get_B();
+  C_ = kalman_filter_params->get_C();
+  D_ = kalman_filter_params->get_D();
+  x_ = kalman_filter_params->get_initial_state();
+  y_ = Eigen::VectorXd::Zero(C_.rows());
 
   try {
     update_qr(kalman_filter_params->get_Q(), kalman_filter_params->get_R());
@@ -213,6 +219,10 @@ void KalmanFilter::update_qr(
   const Eigen::MatrixXd & new_Q,
   const Eigen::MatrixXd & new_R)
 {
+  std::cerr << new_Q << std::endl;
+  std::cerr << new_R << std::endl;
+  std::cerr << A_.rows() << std::endl;
+  std::cerr << A_.cols() << std::endl;
   if (new_Q.rows() != A_.rows() || new_Q.cols() != A_.cols()) {
     throw std::invalid_argument("Process covariance matrix must have dimensions n x n.");
   }

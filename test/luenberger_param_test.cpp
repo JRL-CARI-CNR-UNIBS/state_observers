@@ -99,7 +99,7 @@ TEST(LuenbergerParamTest, SuccessfulInitialization) {
   ASSERT_TRUE(observer_param.get_C().isApprox(expected_C));
   ASSERT_TRUE(observer_param.get_D().isApprox(expected_D));
   ASSERT_TRUE(observer_param.get_initial_state().isApprox(expected_initial_state));
-  ASSERT_TRUE(observer_param.get_Luenberger_gain().isApprox(expected_L));
+  ASSERT_TRUE(observer_param.get_observer_gain().isApprox(expected_L));
 }
 
 TEST(LuenbergerParamLoaderTest, SuccessfulInitialization) {
@@ -196,7 +196,7 @@ TEST(LuenbergerParamLoaderTest, SuccessfulInitialization) {
   std::shared_ptr<state_observer::LuenbergerParam> luenberger_state_observer =
     std::dynamic_pointer_cast<state_observer::LuenbergerParam>(state_observer_param);
 
-  ASSERT_TRUE(luenberger_state_observer->get_Luenberger_gain().isApprox(expected_L));
+  ASSERT_TRUE(luenberger_state_observer->get_observer_gain().isApprox(expected_L));
 }
 
 int main(int argc, char ** argv)
