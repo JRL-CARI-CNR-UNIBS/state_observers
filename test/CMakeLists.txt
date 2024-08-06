@@ -4,6 +4,12 @@ target_link_libraries(state_observers_test
 )
 ament_target_dependencies(state_observers_test ${dependencies})
 
+ament_add_gtest(luenberger_test luenberger_test.cpp)
+target_link_libraries(luenberger_test
+  ${PROJECT_NAME}
+)
+ament_target_dependencies(luenberger_test ${dependencies})
+
 ament_add_gtest(kalman_filter_test kalman_filter_test.cpp)
 target_link_libraries(kalman_filter_test
   ${PROJECT_NAME}

@@ -102,7 +102,7 @@ TEST(LuenbergerParamTest, SuccessfulInitialization) {
   ASSERT_TRUE(observer_param.get_observer_gain().isApprox(expected_L));
 }
 
-TEST(LuenbergerParamLoaderTest, SuccessfulInitialization) {
+TEST(LuenbergerParamLoaderTest, LuenbergerParamPlugin) {
   // Set expected parameter values
   int state_size = 3;
   int input_size = 2;
