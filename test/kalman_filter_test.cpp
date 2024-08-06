@@ -362,7 +362,7 @@ TEST(KalmanFilterTest, KalmanFilterAndParamPlugin)
   state_observer_param->initialize(node);
 
   state_observer->set_parameters(
-    kalman_filter_param);
+    state_observer_param);
 
   ASSERT_TRUE(state_observer->get_A().isApprox(expected_A));
   ASSERT_TRUE(state_observer->get_B().isApprox(expected_B));
