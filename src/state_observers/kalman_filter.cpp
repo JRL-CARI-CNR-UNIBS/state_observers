@@ -147,7 +147,7 @@ KalmanFilter::set_parameters(const StateObserverParam::SharedPtr state_observer_
   B_ = kalman_filter_params->get_B();
   C_ = kalman_filter_params->get_C();
   D_ = kalman_filter_params->get_D();
-  x_ = kalman_filter_params->get_initial_state();
+  StateObserver::initialize(kalman_filter_params->get_initial_state());
   y_ = Eigen::VectorXd::Zero(C_.rows());
 
   try {

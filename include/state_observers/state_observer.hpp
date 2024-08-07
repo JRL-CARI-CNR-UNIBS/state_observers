@@ -43,7 +43,6 @@ public:
   // TODO(@samu) Pure virtual and mandatory in inheritance
 
   void initialize(const Eigen::VectorXd & initial_state);
-  void set_initial_state(const Eigen::VectorXd & initial_state);
   virtual Eigen::VectorXd open_loop_update();
   virtual Eigen::MatrixXd update(const Eigen::VectorXd & measurement) = 0;
   virtual Eigen::MatrixXd update(

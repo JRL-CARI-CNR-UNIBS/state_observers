@@ -77,7 +77,7 @@ Luenberger::set_parameters(const StateObserverParam::SharedPtr state_observer_pa
   B_ = luenberger_params->get_B();
   C_ = luenberger_params->get_C();
   D_ = luenberger_params->get_D();
-  x_ = luenberger_params->get_initial_state();
+  StateObserver::initialize(luenberger_params->get_initial_state());
   y_ = Eigen::VectorXd::Zero(C_.rows());
 
   try {

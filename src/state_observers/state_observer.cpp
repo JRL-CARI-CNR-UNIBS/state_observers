@@ -53,7 +53,7 @@ StateObserver::StateObserver(
 
 void StateObserver::initialize(const Eigen::VectorXd & initial_state)
 {
-  if (initial_state.size() != x_.size()) {
+  if (initial_state.size() != A_.rows()) {
     throw std::invalid_argument("Initial state vector must have size n.");
   }
 
