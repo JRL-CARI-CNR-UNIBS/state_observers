@@ -95,8 +95,10 @@ StateObserver::dimensions_check(
   if (D.cols() != B.cols() || D.rows() != C.rows()) {
     throw std::invalid_argument("Matrix D must have dimensions q x p.");
   }
-  if (initial_state.size() != A.rows()) {
-    throw std::invalid_argument("Initial state vector must have size n.");
+  if (initial_state.size() != 0) {
+    if (initial_state.size() != A.rows()) {
+      throw std::invalid_argument("Initial state vector must have size n.");
+    }
   }
 }
 

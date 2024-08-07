@@ -84,13 +84,13 @@ StateObserverParam::initialize(
     D_ = Eigen::MatrixXd::Zero(output_size, input_size);
   }
 
-  if (!node_->get_parameter("initial_state", initial_state)) {
-    throw std::runtime_error("Failed to get initial_state parameter.");
+  if (node_->get_parameter("initial_state", initial_state)) {
+    // throw std::runtime_error("Failed to get initial_state parameter.");
+    if (initial_state.size() != state_size) {
+      throw std::runtime_error("Initial state has wrong size.");
+    }
+    initial_state_ = Eigen::VectorXd::Map(initial_state.data(), initial_state.size());
   }
-  if (initial_state.size() != state_size) {
-    throw std::runtime_error("Initial state has wrong size.");
-  }
-  initial_state_ = Eigen::VectorXd::Map(initial_state.data(), initial_state.size());
 }
 
 void
