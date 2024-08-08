@@ -86,8 +86,11 @@ StateObserver::dimensions_check(
   if (A.rows() != A.cols()) {
     throw std::invalid_argument("Matrix A must be square of size n x n.");
   }
-  if (B.rows() != A.rows()) {
-    throw std::invalid_argument("Matrix B must have dimensions n x p.");
+
+  if (B.size() != 0) {
+    if (B.rows() != A.rows()) {
+      throw std::invalid_argument("Matrix B must have dimensions n x p.");
+    }
   }
   if (C.cols() != A.rows()) {
     throw std::invalid_argument("Matrix C must have dimensions q x n.");

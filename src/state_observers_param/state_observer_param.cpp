@@ -64,9 +64,10 @@ StateObserverParam::initialize(
       throw std::runtime_error("Input matrix has wrong size.");
     }
     B_ = Eigen::Map<Eigen::MatrixXd>(flat_B.data(), state_size, input_size);
-  } else {
-    B_ = Eigen::MatrixXd::Zero(state_size, input_size);
   }
+  // else {
+  //   B_ = Eigen::MatrixXd::Zero(state_size, input_size);
+  // }
 
   if (!node_->get_parameter("output_matrix", flat_C)) {
     throw std::runtime_error("Failed to get output_matrix parameter.");

@@ -113,13 +113,16 @@ Eigen::MatrixXd Luenberger::update(
     throw std::invalid_argument("Input vector must have size p.");
   }
 
-  y_ = C_ * x_ + D_ * input;
-  x_ = A_ * x_ + B_ * input + L_ * (measurement - y_);
-  std::cerr << "x_ = " << x_[0] << std::endl;
-  std::cerr << "L_ = " << L_[0] << std::endl;
-  std::cerr << "measurement = " << measurement[0] << std::endl;
-  std::cerr << "y_ = " << y_[0] << std::endl;
-
+  if (D_.size() != 0) {
+    y_ = C_ * x_ + D_ * input;
+  } else {
+    y_ = C_ * x_;
+  }
+  if (B_.size() != 0) {
+    x_ = A_ * x_ + B_ * input + L_ * (measurement - y_);
+  } else {
+    x_ = A_ * x_ + L_ * (measurement - y_);
+  }
   return y_;
 }
 

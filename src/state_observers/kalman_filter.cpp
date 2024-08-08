@@ -193,7 +193,11 @@ Eigen::MatrixXd KalmanFilter::update(
   }
 
   // Predict
-  x_ = A_ * x_ + B_ * input;
+  if (B_.size() != 0) {
+    x_ = A_ * x_ + B_ * input;
+  } else {
+    x_ = A_ * x_;
+  }
   P_ = A_ * P_ * A_.transpose() + Q_;
 
   // Update
@@ -203,7 +207,11 @@ Eigen::MatrixXd KalmanFilter::update(
   x_ = x_ + K_ * (measurement - C_ * x_);
   P_ = (I_ - K_ * C_) * P_;
 
-  y_ = C_ * x_ + D_ * input;
+  if (D_.size() != 0) {
+    y_ = C_ * x_ + D_ * input;
+  } else {
+    y_ = C_ * x_;
+  }
 
   return y_;
 }
