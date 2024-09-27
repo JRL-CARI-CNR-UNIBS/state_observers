@@ -16,4 +16,4 @@ Contributions to this project are welcome! You can contribute by reporting bugs,
 - [x] Test State Observer Base Class.
 - [ ] Test Luenberger, Kalman Filter, and new one.
 - [x] Set Github Workflows for CI.
-- [ ] Open a discussion about the necessity to convert to a ROS2 Pluginlib.
+- [x] StateObserver/Luenberger/KalmanFilter and StateObserverParams/LuenbergerParams/KalmanFilterParams are also ROS2 Pluginlib.
