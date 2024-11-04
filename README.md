@@ -1,5 +1,6 @@
 # State Observers Library
-
+[![GitHub Action
+Status](https://github.com/JRL-CARI-CNR-UNIBS/state_observers/workflows/main/badge.svg)](https://github.com/JRL-CARI-CNR-UNIBS/state_observers)
 ## Overview
 
 The State Observers Library provides a set of classes for implementing state observer algorithms, including Luenberger observers and Kalman filters. These observers are widely used in control systems for estimating the internal state variables of a dynamic system from measurements of its outputs.
