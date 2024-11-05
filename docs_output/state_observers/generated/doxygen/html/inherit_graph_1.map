@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classstate__observer_1_1StateObserverParam.html" title="Base class for state observer parameters." alt="" coords="5,39,225,80"/>
-<area shape="rect" id="node2" href="$classstate__observer_1_1KalmanFilterParam.html" title="Parameters for the Kalman Filter observer." alt="" coords="273,5,484,47"/>
-<area shape="rect" id="node3" href="$classstate__observer_1_1LuenbergerParam.html" title="Parameters for the Luenberger observer." alt="" coords="279,71,479,112"/>
-</map>

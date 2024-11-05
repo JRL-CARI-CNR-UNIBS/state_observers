@@ -1,5 +1,0 @@
-<map id="state_observer::StateObserverParam" name="state_observer::StateObserverParam">
-<area shape="rect" id="node1" title="Base class for state observer parameters." alt="" coords="115,5,335,47"/>
-<area shape="rect" id="node2" href="$classstate__observer_1_1KalmanFilterParam.html" title="Parameters for the Kalman Filter observer." alt="" coords="5,95,216,136"/>
-<area shape="rect" id="node3" href="$classstate__observer_1_1LuenbergerParam.html" title="Parameters for the Luenberger observer." alt="" coords="240,95,440,136"/>
-</map>
