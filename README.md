@@ -2,6 +2,7 @@
 
 [![GitHub Action Status](https://github.com/JRL-CARI-CNR-UNIBS/state_observers/workflows/main/badge.svg)](https://github.com/JRL-CARI-CNR-UNIBS/state_observers)
 [![codecov](https://codecov.io/gh/JRL-CARI-CNR-UNIBS/state_observers/graph/badge.svg?token=WTBYK3VQAT)](https://codecov.io/gh/JRL-CARI-CNR-UNIBS/state_observers)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJRL-CARI-CNR-UNIBS%2Fstate_observers.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FJRL-CARI-CNR-UNIBS%2Fstate_observers?ref=badge_shield)
 
 ## Overview
 
@@ -86,3 +87,6 @@ Contributions to this project are welcome! You can contribute by reporting bugs,
 ## License
 
 This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJRL-CARI-CNR-UNIBS%2Fstate_observers.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FJRL-CARI-CNR-UNIBS%2Fstate_observers?ref=badge_large)
