@@ -2,6 +2,7 @@
 
 [![GitHub Action Status](https://github.com/JRL-CARI-CNR-UNIBS/state_observers/workflows/main/badge.svg)](https://github.com/JRL-CARI-CNR-UNIBS/state_observers)
 [![codecov](https://codecov.io/gh/JRL-CARI-CNR-UNIBS/state_observers/graph/badge.svg?token=WTBYK3VQAT)](https://codecov.io/gh/JRL-CARI-CNR-UNIBS/state_observers)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJRL-CARI-CNR-UNIBS%2Fstate_observers.svg?type=shield&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2FJRL-CARI-CNR-UNIBS%2Fstate_observers?ref=badge_shield&issueType=license)
 
 ## Overview
 
