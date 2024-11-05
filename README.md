@@ -16,7 +16,6 @@ The library is designed to be modular and extensible, with a base `StateObserver
 - **Kalman Filter**: Implements a discrete-time Kalman Filter for linear systems.
 - **ROS 2 Pluginlib Integration**: Observers and their parameter classes are available as ROS 2 plugins.
 - **Parameter Classes**: Separate parameter classes manage configuration parameters for observers.
-- **Example Usage**: Includes test examples demonstrating how to use the observers.
 
 ## Classes and Plugins
 
