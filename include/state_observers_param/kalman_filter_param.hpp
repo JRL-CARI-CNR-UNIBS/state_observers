@@ -66,21 +66,21 @@ public:
    *
    * @return Measurement noise covariance matrix `R_` (q x q).
    */
-  Eigen::MatrixXd get_R() { return R_; }
+  Eigen::MatrixXd get_R() {return R_;}
 
   /**
    * @brief Get the process noise covariance matrix `Q`.
    *
    * @return Process noise covariance matrix `Q_` (n x n).
    */
-  Eigen::MatrixXd get_Q() { return Q_; }
+  Eigen::MatrixXd get_Q() {return Q_;}
 
   /**
    * @brief Get the initial error covariance matrix `P0`.
    *
    * @return Initial error covariance matrix `P0_` (n x n).
    */
-  Eigen::MatrixXd get_P0() { return P0_; }
+  Eigen::MatrixXd get_P0() {return P0_;}
 
   /**
    * @brief Get the type of the state observer.

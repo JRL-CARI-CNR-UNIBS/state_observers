@@ -228,21 +228,21 @@ public:
    *
    * @return Matrix `Q_`.
    */
-  inline Eigen::MatrixXd get_Q() const { return Q_; }
+  inline Eigen::MatrixXd get_Q() const {return Q_;}
 
   /**
    * @brief Get the measurement noise covariance matrix `R`.
    *
    * @return Matrix `R_`.
    */
-  inline Eigen::MatrixXd get_R() const { return R_; }
+  inline Eigen::MatrixXd get_R() const {return R_;}
 
   /**
    * @brief Get the initial error covariance matrix `P0`.
    *
    * @return Matrix `P_`.
    */
-  inline Eigen::MatrixXd get_P0() const { return P_; }
+  inline Eigen::MatrixXd get_P0() const {return P_;}
 
 protected:
   Eigen::VectorXd L_;

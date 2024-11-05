@@ -65,7 +65,7 @@ public:
    *
    * @return Observer gain matrix `L_` (n x q).
    */
-  Eigen::MatrixXd get_observer_gain() { return L_; }
+  Eigen::MatrixXd get_observer_gain() {return L_;}
 
   /**
    * @brief Get the type of the state observer.
@@ -73,7 +73,7 @@ public:
    * @return A string representing the type of the state observer.
    */
   std::string get_type() const override;
-  
+
   using SharedPtr = std::shared_ptr<LuenbergerParam>;
 
 protected:

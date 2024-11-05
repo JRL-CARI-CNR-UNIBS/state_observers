@@ -115,7 +115,7 @@ public:
    * @return Updated state estimate.
    */
   virtual Eigen::MatrixXd update(const Eigen::VectorXd & measurement) = 0;
-  
+
   /**
    * @brief Update the observer with a measurement and input.
    *
@@ -126,7 +126,7 @@ public:
   virtual Eigen::MatrixXd update(
     const Eigen::VectorXd & measurement,
     const Eigen::VectorXd & input) = 0;
-  
+
   /**
    * @brief Get the current state estimate.
    *
@@ -140,9 +140,9 @@ public:
    * @return Current output vector `y_`.
    */
   inline Eigen::VectorXd get_output() const {return C_ * x_;}
-  
+
   inline bool is_initialized() const {return initialized_;}
-  
+
   /**
    * @brief Get the variance of the state estimate.
    *
