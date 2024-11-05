@@ -7,7 +7,7 @@
 
 The **State Observers Library** provides a set of classes for implementing state observer algorithms, including **Luenberger observers** and **Kalman filters**. These observers are widely used in control systems for estimating the internal state variables of a dynamic system from measurements of its outputs.
 
-The library is designed to be modular and extensible, with a base `StateObserver` class that can be extended to implement various state estimation algorithms. It also integrates with ROS 2 through pluginlib, allowing for dynamic loading and configuration of observers and their parameters.
+The library is designed to be modular and extensible, with a base `StateObserver` class that can be extended to implement various state estimation algorithms. It also integrates with ROS 2 through pluginlib, allowing for dynamic loading and configuration of observers and their parameters. See the [DOCUMENTATION](https://jrl-cari-cnr-unibs.github.io/state_observers/).
 
 ## Features ✨
 
