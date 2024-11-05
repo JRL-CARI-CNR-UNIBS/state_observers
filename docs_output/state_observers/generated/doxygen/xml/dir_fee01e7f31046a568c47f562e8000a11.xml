@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_fee01e7f31046a568c47f562e8000a11" kind="dir">
+    <compoundname>include/state_observers_param</compoundname>
+    <innerfile refid="kalman__filter__param_8hpp">kalman_filter_param.hpp</innerfile>
+    <innerfile refid="luenberger__param_8hpp">luenberger_param.hpp</innerfile>
+    <innerfile refid="state__observer__param_8hpp">state_observer_param.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/state_observers_param/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classstate__observer_1_1KalmanFilter" kind="class" language="C++" prot="public">
+    <compoundname>state_observer::KalmanFilter</compoundname>
+    <basecompoundref refid="classstate__observer_1_1StateObserver" prot="public" virt="non-virtual">state_observer::StateObserver</basecompoundref>
+    <includes refid="kalman__filter_8hpp" local="no">kalman_filter.hpp</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classstate__observer_1_1KalmanFilter_1aeba3bb962850f4bcee811ea56bab0ed3" prot="protected" static="no" mutable="no">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd state_observer::KalmanFilter::L_</definition>
+        <argsstring></argsstring>
+        <name>L_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="248" column="19" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classstate__observer_1_1KalmanFilter_1ab2e0ce131371bc48a108168cf83dfac2" prot="protected" static="no" mutable="no">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd state_observer::KalmanFilter::P_</definition>
+        <argsstring></argsstring>
+        <name>P_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="249" column="19" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classstate__observer_1_1KalmanFilter_1a6d9f13c28c9f57c965654b537b8047de" prot="protected" static="no" mutable="no">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd state_observer::KalmanFilter::K_</definition>
+        <argsstring></argsstring>
+        <name>K_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="249" column="22" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classstate__observer_1_1KalmanFilter_1a68f2a5ae1fdb84247ac4f75650bfb8be" prot="protected" static="no" mutable="no">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd state_observer::KalmanFilter::Q_</definition>
+        <argsstring></argsstring>
+        <name>Q_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="249" column="25" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classstate__observer_1_1KalmanFilter_1acbe78df0dd67df028fdf10dc1229b1f3" prot="protected" static="no" mutable="no">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd state_observer::KalmanFilter::R_</definition>
+        <argsstring></argsstring>
+        <name>R_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="249" column="28" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classstate__observer_1_1KalmanFilter_1a272ab1a5be93a1043ad2497c72c4e92f" prot="protected" static="no" mutable="no">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd state_observer::KalmanFilter::I_</definition>
+        <argsstring></argsstring>
+        <name>I_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="249" column="31" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1af19ed90f24aaa03d0ee763cb9f117346" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>state_observer::KalmanFilter::KalmanFilter</definition>
+        <argsstring>(const Eigen::MatrixXd &amp;A, const Eigen::MatrixXd &amp;B, const Eigen::MatrixXd &amp;C, const Eigen::MatrixXd &amp;D, const Eigen::VectorXd &amp;initial_state, const Eigen::MatrixXd &amp;Q, const Eigen::MatrixXd &amp;R)</argsstring>
+        <name>KalmanFilter</name>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>D</declname>
+        </param>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>initial_state</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>Q</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Constructor with full state-space matrices, initial state, and covariance matrices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>State transition matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>B</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input matrix (n x p). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output matrix (q x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>D</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Feedthrough matrix (q x p). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initial_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial state vector (n x 1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process noise covariance matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Measurement noise covariance matrix (q x q).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if dimensions are inconsistent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="49" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1ae6d0948f82050ae5867733e1b6e72c83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>state_observer::KalmanFilter::KalmanFilter</definition>
+        <argsstring>(const Eigen::MatrixXd &amp;A, const Eigen::MatrixXd &amp;B, const Eigen::MatrixXd &amp;C, const Eigen::VectorXd &amp;initial_state, const Eigen::MatrixXd &amp;Q, const Eigen::MatrixXd &amp;R)</argsstring>
+        <name>KalmanFilter</name>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>initial_state</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>Q</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Constructor without feedthrough matrix D. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>State transition matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>B</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input matrix (n x p). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output matrix (q x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initial_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial state vector (n x 1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process noise covariance matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Measurement noise covariance matrix (q x q).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if dimensions are inconsistent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="67" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a643e5490657b0b20700d4eb7453a19d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>state_observer::KalmanFilter::KalmanFilter</definition>
+        <argsstring>(const Eigen::MatrixXd &amp;A, const Eigen::MatrixXd &amp;B, const Eigen::MatrixXd &amp;C, const Eigen::MatrixXd &amp;Q, const Eigen::MatrixXd &amp;R)</argsstring>
+        <name>KalmanFilter</name>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>Q</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+<para>Constructor without initial state and feedthrough matrix D. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>State transition matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>B</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input matrix (n x p). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output matrix (q x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process noise covariance matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Measurement noise covariance matrix (q x q).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if dimensions are inconsistent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="84" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1af083f45079c73cf1fe957d257a358ca1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>state_observer::KalmanFilter::KalmanFilter</definition>
+        <argsstring>(const Eigen::MatrixXd &amp;A, const Eigen::MatrixXd &amp;B, const Eigen::MatrixXd &amp;C, const Eigen::MatrixXd &amp;D, const Eigen::VectorXd &amp;initial_state, const Eigen::MatrixXd &amp;Q, const Eigen::MatrixXd &amp;R, const Eigen::MatrixXd &amp;P0)</argsstring>
+        <name>KalmanFilter</name>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>D</declname>
+        </param>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>initial_state</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>Q</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>P0</declname>
+        </param>
+        <briefdescription>
+<para>Constructor with initial error covariance matrix P0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>State transition matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>B</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input matrix (n x p). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output matrix (q x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>D</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Feedthrough matrix (q x p). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initial_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial state vector (n x 1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process noise covariance matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Measurement noise covariance matrix (q x q). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>P0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial error covariance matrix (n x n).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if dimensions are inconsistent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="103" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1aef58ecaf3b277fd289c7f1918d591a5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>state_observer::KalmanFilter::KalmanFilter</definition>
+        <argsstring>(const Eigen::MatrixXd &amp;A, const Eigen::MatrixXd &amp;B, const Eigen::MatrixXd &amp;C, const Eigen::VectorXd &amp;initial_state, const Eigen::MatrixXd &amp;Q, const Eigen::MatrixXd &amp;R, const Eigen::MatrixXd &amp;P0)</argsstring>
+        <name>KalmanFilter</name>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>initial_state</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>Q</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>P0</declname>
+        </param>
+        <briefdescription>
+<para>Constructor without feedthrough matrix D and with initial error covariance matrix P0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>State transition matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>B</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input matrix (n x p). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output matrix (q x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initial_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial state vector (n x 1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process noise covariance matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Measurement noise covariance matrix (q x q). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>P0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial error covariance matrix (n x n).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if dimensions are inconsistent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="123" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a51aff1fb39d614509507e4dcc5678ada" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>state_observer::KalmanFilter::KalmanFilter</definition>
+        <argsstring>(const Eigen::MatrixXd &amp;A, const Eigen::MatrixXd &amp;B, const Eigen::MatrixXd &amp;C, const Eigen::MatrixXd &amp;Q, const Eigen::MatrixXd &amp;R, const Eigen::MatrixXd &amp;P0)</argsstring>
+        <name>KalmanFilter</name>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>Q</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>P0</declname>
+        </param>
+        <briefdescription>
+<para>Constructor without initial state, feedthrough matrix D, and with initial error covariance matrix P0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>State transition matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>B</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input matrix (n x p). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output matrix (q x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process noise covariance matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Measurement noise covariance matrix (q x q). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>P0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial error covariance matrix (n x n).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if dimensions are inconsistent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="142" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1ab3e6a7d05608cfd2de49161eb402e28e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>state_observer::KalmanFilter::KalmanFilter</definition>
+        <argsstring>()</argsstring>
+        <name>KalmanFilter</name>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="151" column="3" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="151" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a1aa5b67c1da14d16cf6df82f5386d99b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>state_observer::KalmanFilter::~KalmanFilter</definition>
+        <argsstring>()</argsstring>
+        <name>~KalmanFilter</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="156" column="3" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="156" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a3be4d2de5926eb3e611dc601adc9a595" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void state_observer::KalmanFilter::set_parameters</definition>
+        <argsstring>(const StateObserverParam::SharedPtr state_observer_params) override</argsstring>
+        <name>set_parameters</name>
+        <reimplements refid="classstate__observer_1_1StateObserver_1a862bfeb79def6189ad6446dd023781a8">set_parameters</reimplements>
+        <param>
+          <type>const StateObserverParam::SharedPtr</type>
+          <declname>state_observer_params</declname>
+        </param>
+        <briefdescription>
+<para>Set the parameters of the Kalman Filter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state_observer_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Shared pointer to <computeroutput><ref refid="classstate__observer_1_1StateObserverParam" kindref="compound">StateObserverParam</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="163" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a27ada2e6b5ee4efbf3bc6f1781413d80" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd state_observer::KalmanFilter::update</definition>
+        <argsstring>(const Eigen::VectorXd &amp;measurement) override</argsstring>
+        <name>update</name>
+        <reimplements refid="classstate__observer_1_1StateObserver_1a07062cefef35b9ec7bf7fc812e82e826">update</reimplements>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>measurement</declname>
+        </param>
+        <briefdescription>
+<para>Update the Kalman Filter with a measurement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>measurement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Measurement vector (q x 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Updated state estimate. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="171" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a5a69f399dc513a1b55650de63900eb3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd state_observer::KalmanFilter::update</definition>
+        <argsstring>(const Eigen::VectorXd &amp;measurement, const Eigen::VectorXd &amp;input) override</argsstring>
+        <name>update</name>
+        <reimplements refid="classstate__observer_1_1StateObserver_1ab3bf488d4abc29ad203d5a566018aabd">update</reimplements>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>measurement</declname>
+        </param>
+        <param>
+          <type>const Eigen::VectorXd &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>Update the Kalman Filter with a measurement and input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>measurement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Measurement vector (q x 1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input vector (p x 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Updated state estimate. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="180" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1aef744a50f9a03b27df8edc02b3a648dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd state_observer::KalmanFilter::open_loop_update</definition>
+        <argsstring>() override</argsstring>
+        <name>open_loop_update</name>
+        <reimplements refid="classstate__observer_1_1StateObserver_1ac6328e22b68efe1f038d7d275aabe0f1">open_loop_update</reimplements>
+        <briefdescription>
+<para>Perform an open-loop update of the Kalman Filter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Updated output vector <computeroutput>y_</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="189" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a91064d452d8675c680312f49f3651817" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void state_observer::KalmanFilter::update_process_covariance</definition>
+        <argsstring>(const Eigen::MatrixXd &amp;new_Q)</argsstring>
+        <name>update_process_covariance</name>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>new_Q</declname>
+        </param>
+        <briefdescription>
+<para>Update the process noise covariance matrix <computeroutput>Q</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New process noise covariance matrix (n x n).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if dimensions are incorrect. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="198" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a85455fc77488c7b7391adabb26b9485c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void state_observer::KalmanFilter::update_measurement_covariance</definition>
+        <argsstring>(const Eigen::MatrixXd &amp;new_R)</argsstring>
+        <name>update_measurement_covariance</name>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>new_R</declname>
+        </param>
+        <briefdescription>
+<para>Update the measurement noise covariance matrix <computeroutput>R</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New measurement noise covariance matrix (q x q).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if dimensions are incorrect. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="207" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a40810a6cac1a1ebd1e07c9fea35e1866" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void state_observer::KalmanFilter::update_qr</definition>
+        <argsstring>(const Eigen::MatrixXd &amp;new_Q, const Eigen::MatrixXd &amp;new_R)</argsstring>
+        <name>update_qr</name>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>new_Q</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixXd &amp;</type>
+          <declname>new_R</declname>
+        </param>
+        <briefdescription>
+<para>Update both the process and measurement noise covariance matrices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_Q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New process noise covariance matrix (n x n). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New measurement noise covariance matrix (q x q).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if dimensions are incorrect. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="217" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a6f86415ca604956468ad7e7863ea257d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd state_observer::KalmanFilter::get_state_variance</definition>
+        <argsstring>() override</argsstring>
+        <name>get_state_variance</name>
+        <reimplements refid="classstate__observer_1_1StateObserver_1aabe418247e711fa2d375f602dc5b6dc2">get_state_variance</reimplements>
+        <briefdescription>
+<para>Get the variance of the state estimate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>State variance vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="224" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a858e311c5639b3e0fe137a969c721542" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd state_observer::KalmanFilter::get_Q</definition>
+        <argsstring>() const</argsstring>
+        <name>get_Q</name>
+        <briefdescription>
+<para>Get the process noise covariance matrix <computeroutput>Q</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Matrix <computeroutput>Q_</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="231" column="26" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="231" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1a87c43b2faaaf326a5be1e1511d0ccdc6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd state_observer::KalmanFilter::get_R</definition>
+        <argsstring>() const</argsstring>
+        <name>get_R</name>
+        <briefdescription>
+<para>Get the measurement noise covariance matrix <computeroutput>R</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Matrix <computeroutput>R_</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="238" column="26" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="238" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__observer_1_1KalmanFilter_1ac35e2976957f06c034f685c0babcc51d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd state_observer::KalmanFilter::get_P0</definition>
+        <argsstring>() const</argsstring>
+        <name>get_P0</name>
+        <briefdescription>
+<para>Get the initial error covariance matrix <computeroutput>P0</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Matrix <computeroutput>P_</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_observers/kalman_filter.hpp" line="245" column="26" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="245" bodyend="245"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation of a discrete-time Kalman Filter for linear systems. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="classstate__observer_1_1KalmanFilter" kindref="compound">KalmanFilter</ref></computeroutput> class extends the <computeroutput><ref refid="classstate__observer_1_1StateObserver" kindref="compound">StateObserver</ref></computeroutput> base class to provide a Kalman Filter, which estimates the state of a linear system by minimizing the covariance of the estimation error. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>state_observer::KalmanFilter</label>
+        <link refid="classstate__observer_1_1KalmanFilter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>state_observer::StateObserver</label>
+        <link refid="classstate__observer_1_1StateObserver"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>state_observer::KalmanFilter</label>
+        <link refid="classstate__observer_1_1KalmanFilter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>state_observer::StateObserver</label>
+        <link refid="classstate__observer_1_1StateObserver"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/state_observers/kalman_filter.hpp" line="33" column="1" bodyfile="include/state_observers/kalman_filter.hpp" bodystart="34" bodyend="250"/>
+    <listofallmembers>
+      <member refid="classstate__observer_1_1StateObserver_1af3f080b718a6ef61a64c7e862048c44f" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>A_</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a09055e588ba4c8f22db835009438aa77" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>B_</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a308ca363bbc642804080ffdd82838b2d" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>C_</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a0cfe3e7379d3b3750f9d00b46bdf8c05" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>D_</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a2eb5e2ed964d80974046edc36444e818" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>dimensions_check</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1ae4f32a27873521e6058caa53de1771b0" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>get_A</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a411e66ea4d02a57c2e8af6e7a99b9756" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>get_B</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a794bbe83b0a35dd79d1201d3690bff4b" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>get_C</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a7137173a3e445f8f5dfaea0690641158" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>get_D</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a799b4a02f065423beb563700ea6d9ed4" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>get_initial_state</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a65034cb07db2a389bdcff3eaf4c6fa6f" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>get_output</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1ac35e2976957f06c034f685c0babcc51d" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>get_P0</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a858e311c5639b3e0fe137a969c721542" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>get_Q</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a87c43b2faaaf326a5be1e1511d0ccdc6" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>get_R</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1ac9bce8f25518d27fe05e5a76b024892f" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>get_state</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a6f86415ca604956468ad7e7863ea257d" prot="public" virt="virtual"><scope>state_observer::KalmanFilter</scope><name>get_state_variance</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a272ab1a5be93a1043ad2497c72c4e92f" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>I_</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1ac3ae192893b2899e47dcf6a572924dc1" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>initialize</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a3723847df0f121e25d0042438c7125c0" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>initialized_</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1aa25df9ccd2ebf9c553455d1116efb1e4" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>is_initialized</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a6d9f13c28c9f57c965654b537b8047de" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>K_</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1af19ed90f24aaa03d0ee763cb9f117346" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>KalmanFilter</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1ae6d0948f82050ae5867733e1b6e72c83" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>KalmanFilter</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a643e5490657b0b20700d4eb7453a19d9" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>KalmanFilter</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1af083f45079c73cf1fe957d257a358ca1" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>KalmanFilter</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1aef58ecaf3b277fd289c7f1918d591a5f" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>KalmanFilter</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a51aff1fb39d614509507e4dcc5678ada" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>KalmanFilter</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1ab3e6a7d05608cfd2de49161eb402e28e" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>KalmanFilter</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1aeba3bb962850f4bcee811ea56bab0ed3" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>L_</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1aef744a50f9a03b27df8edc02b3a648dd" prot="public" virt="virtual"><scope>state_observer::KalmanFilter</scope><name>open_loop_update</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1ab2e0ce131371bc48a108168cf83dfac2" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>P_</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a68f2a5ae1fdb84247ac4f75650bfb8be" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>Q_</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1acbe78df0dd67df028fdf10dc1229b1f3" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>R_</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a3be4d2de5926eb3e611dc601adc9a595" prot="public" virt="virtual"><scope>state_observer::KalmanFilter</scope><name>set_parameters</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1ab6e27d39c167150821b7cdfb543e06db" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>set_state_transition_matrix</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1af7f4758be22113043bcf627614c72b2c" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>StateObserver</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1af264a05c2165ad46ac0a791fc0d81345" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>StateObserver</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1ab7c5cc9c2fe24acf92f418d698f1e080" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>StateObserver</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1aaa7ed3fc92876429b6b91ce90e42b9d6" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>StateObserver</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a27ada2e6b5ee4efbf3bc6f1781413d80" prot="public" virt="virtual"><scope>state_observer::KalmanFilter</scope><name>update</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a5a69f399dc513a1b55650de63900eb3f" prot="public" virt="virtual"><scope>state_observer::KalmanFilter</scope><name>update</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a85455fc77488c7b7391adabb26b9485c" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>update_measurement_covariance</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a91064d452d8675c680312f49f3651817" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>update_process_covariance</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a40810a6cac1a1ebd1e07c9fea35e1866" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>update_qr</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a231625c9e7ceb8b5b43b97470c27a29e" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>x_</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a5b4446347b32faad520b80620b98c542" prot="protected" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>y_</name></member>
+      <member refid="classstate__observer_1_1KalmanFilter_1a1aa5b67c1da14d16cf6df82f5386d99b" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>~KalmanFilter</name></member>
+      <member refid="classstate__observer_1_1StateObserver_1a528b2c8fda31403a5de854f06b423498" prot="public" virt="non-virtual"><scope>state_observer::KalmanFilter</scope><name>~StateObserver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
