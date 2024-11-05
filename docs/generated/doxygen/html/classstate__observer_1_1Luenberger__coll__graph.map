@@ -1,0 +1,4 @@
+<map id="state_observer::Luenberger" name="state_observer::Luenberger">
+<area shape="rect" id="node1" title="Implementation of a Luenberger observer for linear systems." alt="" coords="15,80,215,107"/>
+<area shape="rect" id="node2" href="$classstate__observer_1_1StateObserver.html" title="A generic state observer class for linear systems." alt="" coords="5,5,225,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="state_observer::StateObserver" name="state_observer::StateObserver">
+<area shape="rect" id="node1" title="A generic state observer class for linear systems." alt="" coords="115,5,335,32"/>
+<area shape="rect" id="node2" href="$classstate__observer_1_1KalmanFilter.html" title="Implementation of a discrete&#45;time Kalman Filter for linear systems." alt="" coords="5,80,216,107"/>
+<area shape="rect" id="node3" href="$classstate__observer_1_1Luenberger.html" title="Implementation of a Luenberger observer for linear systems." alt="" coords="240,80,440,107"/>
+</map>

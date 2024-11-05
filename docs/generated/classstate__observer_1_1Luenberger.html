@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Luenberger &mdash; state_observers 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7026087e"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class LuenbergerParam" href="classstate__observer_1_1LuenbergerParam.html" />
+    <link rel="prev" title="Class KalmanFilterParam" href="classstate__observer_1_1KalmanFilterParam.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            state_observers
+          </a>
+              <div class="version">
+                0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#full-c-api">Full C++ API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="namespace_state_observer.html">Namespace state_observer</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="classstate__observer_1_1KalmanFilter.html">Class KalmanFilter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classstate__observer_1_1KalmanFilterParam.html">Class KalmanFilterParam</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class Luenberger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classstate__observer_1_1LuenbergerParam.html">Class LuenbergerParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classstate__observer_1_1StateObserver.html">Class StateObserver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classstate__observer_1_1StateObserverParam.html">Class StateObserverParam</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#directories">Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dir_include.html">Directory include</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dir_include_state_observers.html">Directory state_observers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dir_include_state_observers_param.html">Directory state_observers_param</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#files">Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="file_include_state_observers_kalman_filter.hpp.html">File kalman_filter.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_include_state_observers_param_kalman_filter_param.hpp.html">File kalman_filter_param.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_include_state_observers_luenberger.hpp.html">File luenberger.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_include_state_observers_param_luenberger_param.hpp.html">File luenberger_param.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_include_state_observers_state_observer.hpp.html">File state_observer.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_include_state_observers_param_state_observer_param.hpp.html">File state_observer_param.hpp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../standards.html">Standard Documents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../standard_docs/CONTRIBUTING.html">CONTRIBUTING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standard_docs/LICENSE.html">LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standard_docs/PACKAGE.html">PACKAGE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standard_docs/README.html">README</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../standard_docs/README.html#state-observers-library">State Observers Library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../standard_docs/README.html#overview">Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../standard_docs/README.html#contributing">Contributing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../standard_docs/README.html#todo-list">TODO List</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">state_observers</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">C++ API</a></li>
+      <li class="breadcrumb-item active">Class Luenberger</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/classstate__observer_1_1Luenberger.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-luenberger">
+<span id="exhale-class-classstate-observer-1-1luenberger"></span><h1>Class Luenberger<a class="headerlink" href="#class-luenberger" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_state_observers_luenberger.hpp.html#file-include-state-observers-luenberger-hpp"><span class="std std-ref">File luenberger.hpp</span></a></p></li>
+</ul>
+<section id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Link to this heading"></a></h2>
+<section id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">state_observer::StateObserver</span></code> (<a class="reference internal" href="classstate__observer_1_1StateObserver.html#exhale-class-classstate-observer-1-1stateobserver"><span class="std std-ref">Class StateObserver</span></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10LuenbergerE">
+<span id="_CPPv3N14state_observer10LuenbergerE"></span><span id="_CPPv2N14state_observer10LuenbergerE"></span><span id="state_observer::Luenberger"></span><span class="target" id="classstate__observer_1_1Luenberger"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Luenberger</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">state_observer</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classstate__observer_1_1StateObserver.html#_CPPv4N14state_observer13StateObserverE" title="state_observer::StateObserver"><span class="n"><span class="pre">StateObserver</span></span></a><a class="headerlink" href="#_CPPv4N14state_observer10LuenbergerE" title="Link to this definition"></a><br /></dt>
+<dd><p>Implementation of a <a class="reference internal" href="#classstate__observer_1_1Luenberger"><span class="std std-ref">Luenberger</span></a> observer for linear systems. </p>
+<p>The <code class="docutils literal notranslate"><a class="reference internal" href="#classstate__observer_1_1Luenberger"><span class="std std-ref"><span class="pre">Luenberger</span></span></a></code> class extends the <code class="docutils literal notranslate"><a class="reference internal" href="classstate__observer_1_1StateObserver.html#classstate__observer_1_1StateObserver"><span class="std std-ref"><span class="pre">StateObserver</span></span></a></code> base class to provide a <a class="reference internal" href="#classstate__observer_1_1Luenberger"><span class="std std-ref">Luenberger</span></a> observer, which estimates the state of a linear system using a specified observer gain matrix <code class="docutils literal notranslate"><span class="pre">L</span></code>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8VectorXdERKN5Eigen8MatrixXdE">
+<span id="_CPPv3N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8VectorXdERKN5Eigen8MatrixXdE"></span><span id="_CPPv2N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8VectorXdERKN5Eigen8MatrixXdE"></span><span id="state_observer::Luenberger::Luenberger__Eigen::MatrixXdCR.Eigen::MatrixXdCR.Eigen::MatrixXdCR.Eigen::MatrixXdCR.Eigen::VectorXdCR.Eigen::MatrixXdCR"></span><span class="target" id="classstate__observer_1_1Luenberger_1a16929984163b7f47e97db1d070f290ce"></span><span class="sig-name descname"><span class="n"><span class="pre">Luenberger</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">A</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">B</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">C</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">D</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">initial_state</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">L</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8VectorXdERKN5Eigen8MatrixXdE" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor with full state-space matrices, initial state, and observer gain. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> – State transition matrix (n x n). </p></li>
+<li><p><strong>B</strong> – Input matrix (n x p). </p></li>
+<li><p><strong>C</strong> – Output matrix (q x n). </p></li>
+<li><p><strong>D</strong> – Feedthrough matrix (q x p). </p></li>
+<li><p><strong>initial_state</strong> – Initial state vector (n x 1). </p></li>
+<li><p><strong>L</strong> – Observer gain matrix (n x q).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">invalid_argument</span></span></span> – if dimensions are inconsistent. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8VectorXdERKN5Eigen8MatrixXdE">
+<span id="_CPPv3N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8VectorXdERKN5Eigen8MatrixXdE"></span><span id="_CPPv2N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8VectorXdERKN5Eigen8MatrixXdE"></span><span id="state_observer::Luenberger::Luenberger__Eigen::MatrixXdCR.Eigen::MatrixXdCR.Eigen::MatrixXdCR.Eigen::VectorXdCR.Eigen::MatrixXdCR"></span><span class="target" id="classstate__observer_1_1Luenberger_1abae9eae252eb9b3755290387fd3ed66b"></span><span class="sig-name descname"><span class="n"><span class="pre">Luenberger</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">A</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">B</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">C</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">initial_state</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">L</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8VectorXdERKN5Eigen8MatrixXdE" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor without feedthrough matrix D. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> – State transition matrix (n x n). </p></li>
+<li><p><strong>B</strong> – Input matrix (n x p). </p></li>
+<li><p><strong>C</strong> – Output matrix (q x n). </p></li>
+<li><p><strong>initial_state</strong> – Initial state vector (n x 1). </p></li>
+<li><p><strong>L</strong> – Observer gain matrix (n x q).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">invalid_argument</span></span></span> – if dimensions are inconsistent. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdE">
+<span id="_CPPv3N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdE"></span><span id="_CPPv2N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdE"></span><span id="state_observer::Luenberger::Luenberger__Eigen::MatrixXdCR.Eigen::MatrixXdCR.Eigen::MatrixXdCR.Eigen::MatrixXdCR"></span><span class="target" id="classstate__observer_1_1Luenberger_1a4493b2461f323dafb197ac4fcd1f88c0"></span><span class="sig-name descname"><span class="n"><span class="pre">Luenberger</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">A</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">B</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">C</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">L</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14state_observer10Luenberger10LuenbergerERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdERKN5Eigen8MatrixXdE" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor without initial state and feedthrough matrix D. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> – State transition matrix (n x n). </p></li>
+<li><p><strong>B</strong> – Input matrix (n x p). </p></li>
+<li><p><strong>C</strong> – Output matrix (q x n). </p></li>
+<li><p><strong>L</strong> – Observer gain matrix (n x q).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">invalid_argument</span></span></span> – if dimensions are inconsistent. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10Luenberger10LuenbergerEv">
+<span id="_CPPv3N14state_observer10Luenberger10LuenbergerEv"></span><span id="_CPPv2N14state_observer10Luenberger10LuenbergerEv"></span><span id="state_observer::Luenberger::Luenberger"></span><span class="target" id="classstate__observer_1_1Luenberger_1abe60dea3226dd881e2df2f4a1cea4a49"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Luenberger</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14state_observer10Luenberger10LuenbergerEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Default constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10LuenbergerD0Ev">
+<span id="_CPPv3N14state_observer10LuenbergerD0Ev"></span><span id="_CPPv2N14state_observer10LuenbergerD0Ev"></span><span id="state_observer::Luenberger::~Luenberger"></span><span class="target" id="classstate__observer_1_1Luenberger_1abee2fc506b66688f26ace1f4ef756f49"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~Luenberger</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14state_observer10LuenbergerD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10Luenberger14set_parametersEKN18StateObserverParam9SharedPtrE">
+<span id="_CPPv3N14state_observer10Luenberger14set_parametersEKN18StateObserverParam9SharedPtrE"></span><span id="_CPPv2N14state_observer10Luenberger14set_parametersEKN18StateObserverParam9SharedPtrE"></span><span id="state_observer::Luenberger::set_parameters__StateObserverParam::SharedPtrC"></span><span class="target" id="classstate__observer_1_1Luenberger_1a990ad8246d6da844e8facd76bac5d948"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_parameters</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classstate__observer_1_1StateObserverParam.html#_CPPv4N14state_observer18StateObserverParamE" title="state_observer::StateObserverParam"><span class="n"><span class="pre">StateObserverParam</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classstate__observer_1_1StateObserverParam.html#_CPPv4N14state_observer18StateObserverParam9SharedPtrE" title="state_observer::StateObserverParam::SharedPtr"><span class="n"><span class="pre">SharedPtr</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">state_observer_params</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N14state_observer10Luenberger14set_parametersEKN18StateObserverParam9SharedPtrE" title="Link to this definition"></a><br /></dt>
+<dd><p>Set the parameters of the <a class="reference internal" href="#classstate__observer_1_1Luenberger"><span class="std std-ref">Luenberger</span></a> observer. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state_observer_params</strong> – Shared pointer to <code class="docutils literal notranslate"><a class="reference internal" href="classstate__observer_1_1StateObserverParam.html#classstate__observer_1_1StateObserverParam"><span class="std std-ref"><span class="pre">StateObserverParam</span></span></a></code>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10Luenberger17set_observer_gainERKN5Eigen8MatrixXdE">
+<span id="_CPPv3N14state_observer10Luenberger17set_observer_gainERKN5Eigen8MatrixXdE"></span><span id="_CPPv2N14state_observer10Luenberger17set_observer_gainERKN5Eigen8MatrixXdE"></span><span id="state_observer::Luenberger::set_observer_gain__Eigen::MatrixXdCR"></span><span class="target" id="classstate__observer_1_1Luenberger_1ab46f7f08840c4688ef9d1e992fadea73"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_observer_gain</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">L</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14state_observer10Luenberger17set_observer_gainERKN5Eigen8MatrixXdE" title="Link to this definition"></a><br /></dt>
+<dd><p>Set the observer gain matrix <code class="docutils literal notranslate"><span class="pre">L</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>L</strong> – New observer gain matrix (n x q).</p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">invalid_argument</span></span></span> – if dimensions are incorrect. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10Luenberger6updateERKN5Eigen8VectorXdE">
+<span id="_CPPv3N14state_observer10Luenberger6updateERKN5Eigen8VectorXdE"></span><span id="_CPPv2N14state_observer10Luenberger6updateERKN5Eigen8VectorXdE"></span><span id="state_observer::Luenberger::update__Eigen::VectorXdCR"></span><span class="target" id="classstate__observer_1_1Luenberger_1aeef08b1e109c369246e440f7bf92f3e2"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">measurement</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N14state_observer10Luenberger6updateERKN5Eigen8VectorXdE" title="Link to this definition"></a><br /></dt>
+<dd><p>Update the observer with a measurement. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>measurement</strong> – Measurement vector (q x 1). </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Updated state estimate. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10Luenberger6updateERKN5Eigen8VectorXdERKN5Eigen8VectorXdE">
+<span id="_CPPv3N14state_observer10Luenberger6updateERKN5Eigen8VectorXdERKN5Eigen8VectorXdE"></span><span id="_CPPv2N14state_observer10Luenberger6updateERKN5Eigen8VectorXdERKN5Eigen8VectorXdE"></span><span id="state_observer::Luenberger::update__Eigen::VectorXdCR.Eigen::VectorXdCR"></span><span class="target" id="classstate__observer_1_1Luenberger_1ad514f468dbfa4e073232e1438c55176a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">measurement</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">input</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N14state_observer10Luenberger6updateERKN5Eigen8VectorXdERKN5Eigen8VectorXdE" title="Link to this definition"></a><br /></dt>
+<dd><p>Update the observer with a measurement and input. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>measurement</strong> – Measurement vector (q x 1). </p></li>
+<li><p><strong>input</strong> – Input vector (p x 1). </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Updated state estimate. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK14state_observer10Luenberger17get_observer_gainEv">
+<span id="_CPPv3NK14state_observer10Luenberger17get_observer_gainEv"></span><span id="_CPPv2NK14state_observer10Luenberger17get_observer_gainEv"></span><span id="state_observer::Luenberger::get_observer_gainC"></span><span class="target" id="classstate__observer_1_1Luenberger_1aa9699252ab80e57cf01a516770dbb8c4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_observer_gain</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK14state_observer10Luenberger17get_observer_gainEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14state_observer10Luenberger2L_E">
+<span id="_CPPv3N14state_observer10Luenberger2L_E"></span><span id="_CPPv2N14state_observer10Luenberger2L_E"></span><span id="state_observer::Luenberger::L___Eigen::VectorXd"></span><span class="target" id="classstate__observer_1_1Luenberger_1ae977cce9e800e6efcecd14b5f35c7a78"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">L_</span></span></span><a class="headerlink" href="#_CPPv4N14state_observer10Luenberger2L_E" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classstate__observer_1_1KalmanFilterParam.html" class="btn btn-neutral float-left" title="Class KalmanFilterParam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classstate__observer_1_1LuenbergerParam.html" class="btn btn-neutral float-right" title="Class LuenbergerParam" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright The &lt;state_observers&gt; Contributors. License: Apache License, Version 2.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

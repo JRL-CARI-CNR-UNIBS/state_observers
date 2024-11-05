@@ -25,24 +25,106 @@
 namespace state_observer
 {
 
+/**
+ * @class StateObserverParam
+ * @brief Base class for state observer parameters.
+ *
+ * The `StateObserverParam` class provides methods to initialize and manage the parameters
+ * required for a state observer, including state-space matrices and the initial state vector.
+ */
 class StateObserverParam
 {
 public:
+  /**
+   * @brief Default constructor.
+   */
   StateObserverParam() {}
 
+  /**
+   * @brief Destructor.
+   */
   virtual ~StateObserverParam() {}
+
+  /**
+   * @brief Initialize the parameters from a ROS 2 lifecycle node.
+   *
+   * @param node Shared pointer to an `rclcpp_lifecycle::LifecycleNode`.
+   *
+   * @throws std::runtime_error if parameter retrieval fails.
+   */
   virtual void initialize(const rclcpp_lifecycle::LifecycleNode::SharedPtr & node);
 
-  inline Eigen::MatrixXd get_state_transition_matrix() {return A_;}
-  inline Eigen::MatrixXd get_input_matrix() {return B_;}
-  inline Eigen::MatrixXd get_output_matrix() {return C_;}
-  inline Eigen::MatrixXd get_feedforward_matrix() {return D_;}
-  inline Eigen::VectorXd get_initial_state() const {return initial_state_;}
-  inline Eigen::MatrixXd get_A() {return A_;}
-  inline Eigen::MatrixXd get_B() {return B_;}
-  inline Eigen::MatrixXd get_C() {return C_;}
-  inline Eigen::MatrixXd get_D() {return D_;}
-  virtual std::string get_type() const {throw std::runtime_error("Not implemented.");}
+  /**
+   * @brief Get the state transition matrix `A`.
+   *
+   * @return State transition matrix `A_` (n x n).
+   */
+  inline Eigen::MatrixXd get_state_transition_matrix() { return A_; }
+
+  /**
+   * @brief Get the input matrix `B`.
+   *
+   * @return Input matrix `B_` (n x p).
+   */
+  inline Eigen::MatrixXd get_input_matrix() { return B_; }
+
+  /**
+   * @brief Get the output matrix `C`.
+   *
+   * @return Output matrix `C_` (q x n).
+   */
+  inline Eigen::MatrixXd get_output_matrix() { return C_; }
+
+  /**
+   * @brief Get the feedforward matrix `D`.
+   *
+   * @return Feedforward matrix `D_` (q x p).
+   */
+  inline Eigen::MatrixXd get_feedforward_matrix() { return D_; }
+
+  /**
+   * @brief Get the initial state vector.
+   *
+   * @return Initial state vector `initial_state_` (n x 1).
+   */
+  inline Eigen::VectorXd get_initial_state() const { return initial_state_; }
+
+  /**
+   * @brief Get the state transition matrix `A`.
+   *
+   * @return State transition matrix `A_` (n x n).
+   */
+  inline Eigen::MatrixXd get_A() { return A_; }
+
+  /**
+   * @brief Get the input matrix `B`.
+   *
+   * @return Input matrix `B_` (n x p).
+   */
+  inline Eigen::MatrixXd get_B() { return B_; }
+
+  /**
+   * @brief Get the output matrix `C`.
+   *
+   * @return Output matrix `C_` (q x n).
+   */
+  inline Eigen::MatrixXd get_C() { return C_; }
+
+  /**
+   * @brief Get the feedforward matrix `D`.
+   *
+   * @return Feedforward matrix `D_` (q x p).
+   */
+  inline Eigen::MatrixXd get_D() { return D_; }
+
+  /**
+   * @brief Get the type of the state observer.
+   *
+   * @return A string representing the type of the state observer.
+   *
+   * @throws std::runtime_error if not implemented.
+   */
+  virtual std::string get_type() const { throw std::runtime_error("Not implemented."); }
   // TODO(@samu) pure virtual and dummy in test
 
   using SharedPtr = std::shared_ptr<StateObserverParam>;

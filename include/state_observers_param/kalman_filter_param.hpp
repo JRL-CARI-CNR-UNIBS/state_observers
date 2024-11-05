@@ -28,17 +28,65 @@
 namespace state_observer
 {
 
+/**
+ * @class KalmanFilterParam
+ * @brief Parameters for the Kalman Filter observer.
+ *
+ * The `KalmanFilterParam` class extends `StateObserverParam` to include
+ * the process noise covariance matrix `Q`, measurement noise covariance matrix `R`,
+ * and the initial error covariance matrix `P0` specific to the Kalman Filter observer.
+ */
 class KalmanFilterParam : public StateObserverParam
 {
 public:
+  /**
+   * @brief Default constructor.
+   */
   KalmanFilterParam() {}
 
+  /**
+   * @brief Destructor.
+   */
   virtual ~KalmanFilterParam() {}
+
+  /**
+   * @brief Initialize the parameters from a ROS 2 lifecycle node.
+   *
+   * This method reads the parameters from the provided node and initializes
+   * the state-space matrices and covariance matrices.
+   *
+   * @param node Shared pointer to an `rclcpp_lifecycle::LifecycleNode`.
+   *
+   * @throws std::runtime_error if parameter retrieval fails.
+   */
   virtual void initialize(const rclcpp_lifecycle::LifecycleNode::SharedPtr & node);
 
-  Eigen::MatrixXd get_R() {return R_;}
-  Eigen::MatrixXd get_Q() {return Q_;}
-  Eigen::MatrixXd get_P0() {return P0_;}
+  /**
+   * @brief Get the measurement noise covariance matrix `R`.
+   *
+   * @return Measurement noise covariance matrix `R_` (q x q).
+   */
+  Eigen::MatrixXd get_R() { return R_; }
+
+  /**
+   * @brief Get the process noise covariance matrix `Q`.
+   *
+   * @return Process noise covariance matrix `Q_` (n x n).
+   */
+  Eigen::MatrixXd get_Q() { return Q_; }
+
+  /**
+   * @brief Get the initial error covariance matrix `P0`.
+   *
+   * @return Initial error covariance matrix `P0_` (n x n).
+   */
+  Eigen::MatrixXd get_P0() { return P0_; }
+
+  /**
+   * @brief Get the type of the state observer.
+   *
+   * @return A string representing the type of the state observer.
+   */
   std::string get_type() const override;
 
   using SharedPtr = std::shared_ptr<KalmanFilterParam>;
