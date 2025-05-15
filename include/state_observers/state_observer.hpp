@@ -100,6 +100,26 @@ public:
   void initialize(const Eigen::VectorXd & initial_state);
 
   /**
+ * @brief Set the state-space model (A, B, C, D).
+ *
+ * This method allows late initialization of the system matrices, useful when using the default constructor.
+ * It performs a dimensional consistency check.
+ *
+ * @param A State transition matrix (n x n).
+ * @param B Input matrix (n x p).
+ * @param C Output matrix (q x n).
+ * @param D Feedthrough matrix (q x p).
+ * @param initial_state Optional initial state vector (n x 1).
+ *
+ * @throws std::invalid_argument if dimensions are inconsistent.
+ */
+  void set_model(
+    const Eigen::MatrixXd & A,
+    const Eigen::MatrixXd & B,
+    const Eigen::MatrixXd & C,
+    const Eigen::MatrixXd & D);
+
+  /**
    * @brief Perform an open-loop update of the observer.
    *
    * Updates the state `x_` using the state transition matrix `A_` without considering any input or measurement.
@@ -162,6 +182,11 @@ protected:
   Eigen::MatrixXd A_, B_, C_, D_;
   Eigen::VectorXd x_, y_;
   bool initialized_ = false;
+
+  void dimensions_check(
+    const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+    const Eigen::MatrixXd & C, const Eigen::MatrixXd & D
+  );
 
   void dimensions_check(
     const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,

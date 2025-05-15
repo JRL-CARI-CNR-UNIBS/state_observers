@@ -22,22 +22,8 @@ StateObserver::StateObserver(
   const Eigen::MatrixXd & C, const Eigen::MatrixXd & D,
   const Eigen::VectorXd & initial_state)
 {
-  try {
-    dimensions_check(A, B, C, D, initial_state);
-  } catch (const std::invalid_argument & e) {
-    throw e;
-  }
-
-  // if (y_.size() != C_.rows()) {
-  //   throw std::invalid_argument("Initial output vector must have size q.");
-  // }
-
-  A_ = A;
-  B_ = B;
-  C_ = C;
-  D_ = D;
-  x_ = initial_state;
-  y_ = Eigen::VectorXd::Zero(C_.rows());
+  set_model(A, B, C, D);
+  initialize(initial_state);
 }
 
 StateObserver::StateObserver(
@@ -59,6 +45,27 @@ void StateObserver::initialize(const Eigen::VectorXd & initial_state)
 
   x_ = initial_state;
   initialized_ = true;
+}
+
+void StateObserver::set_model(
+  const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+  const Eigen::MatrixXd & C, const Eigen::MatrixXd & D)
+{
+  try {
+    dimensions_check(A, B, C, D);
+  } catch (const std::invalid_argument & e) {
+    throw e;
+  }
+
+  // if (y_.size() != C_.rows()) {
+  //   throw std::invalid_argument("Initial output vector must have size q.");
+  // }
+
+  A_ = A;
+  B_ = B;
+  C_ = C;
+  D_ = D;
+  y_ = Eigen::VectorXd::Zero(C_.rows());
 }
 
 Eigen::VectorXd StateObserver::open_loop_update()
@@ -83,6 +90,20 @@ StateObserver::dimensions_check(
   const Eigen::MatrixXd & C, const Eigen::MatrixXd & D,
   const Eigen::VectorXd & initial_state)
 {
+  dimensions_check(A, B, C, D);
+
+  if (initial_state.size() != 0) {
+    if (initial_state.size() != A.rows()) {
+      throw std::invalid_argument("Initial state vector must have size n.");
+    }
+  }
+}
+
+void
+StateObserver::dimensions_check(
+  const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+  const Eigen::MatrixXd & C, const Eigen::MatrixXd & D)
+{
   if (A.rows() != A.cols()) {
     throw std::invalid_argument("Matrix A must be square of size n x n.");
   }
@@ -98,11 +119,7 @@ StateObserver::dimensions_check(
   if (D.cols() != B.cols() || D.rows() != C.rows()) {
     throw std::invalid_argument("Matrix D must have dimensions q x p.");
   }
-  if (initial_state.size() != 0) {
-    if (initial_state.size() != A.rows()) {
-      throw std::invalid_argument("Initial state vector must have size n.");
-    }
-  }
 }
+
 
 }  // namespace state_observer

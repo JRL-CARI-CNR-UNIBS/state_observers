@@ -244,6 +244,12 @@ public:
    */
   inline Eigen::MatrixXd get_P0() const {return P_;}
 
+  /**
+   * @brief Set the initial error covariance matrix `P0`.
+   *
+   */
+  void set_P0(const Eigen::MatrixXd P0);
+
 protected:
   Eigen::VectorXd L_;
   Eigen::MatrixXd P_, K_, Q_, R_, I_;

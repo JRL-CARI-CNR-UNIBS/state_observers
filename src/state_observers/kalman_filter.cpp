@@ -191,6 +191,9 @@ Eigen::MatrixXd KalmanFilter::update(
   if (input.size() != B_.cols()) {
     throw std::invalid_argument("Input vector must have size p.");
   }
+  if (I_.size() == 0) {
+    I_ = Eigen::MatrixXd::Identity(A_.rows(), A_.cols());
+  }
 
   // Predict
   if (B_.size() != 0) {
@@ -229,10 +232,6 @@ void KalmanFilter::update_qr(
   const Eigen::MatrixXd & new_Q,
   const Eigen::MatrixXd & new_R)
 {
-  std::cerr << new_Q << std::endl;
-  std::cerr << new_R << std::endl;
-  std::cerr << A_.rows() << std::endl;
-  std::cerr << A_.cols() << std::endl;
   if (new_Q.rows() != A_.rows() || new_Q.cols() != A_.cols()) {
     throw std::invalid_argument("Process covariance matrix must have dimensions n x n.");
   }
@@ -245,6 +244,14 @@ void KalmanFilter::update_qr(
 Eigen::VectorXd KalmanFilter::get_state_variance()
 {
   return P_.diagonal();
+}
+
+void KalmanFilter::set_P0(const Eigen::MatrixXd P0)
+{
+  if (P0.rows() != A_.rows() || P0.cols() != A_.cols()) {
+    throw std::invalid_argument("Initial covariance matrix must have dimensions n x n.");
+  }
+  P_ = P0;
 }
 
 }  // namespace state_observer

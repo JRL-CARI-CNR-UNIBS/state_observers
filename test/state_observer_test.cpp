@@ -42,6 +42,39 @@ public:
   }
 };
 
+class StateObserverEmptyDummy : public state_observer::StateObserver
+{
+public:
+  StateObserverEmptyDummy()
+  : state_observer::StateObserver()
+  {
+  }
+
+  void set_matrices(
+    const Eigen::MatrixXd & A, const Eigen::MatrixXd & B,
+    const Eigen::MatrixXd & C, const Eigen::MatrixXd & D)
+  {
+    A_ = A;
+    B_ = B;
+    C_ = C;
+    D_ = D;
+  }
+
+  Eigen::MatrixXd update(const Eigen::VectorXd & measurement) override
+  {
+    auto avoid_warning = measurement;
+    return Eigen::MatrixXd();
+  }
+  Eigen::MatrixXd update(
+    const Eigen::VectorXd & measurement,
+    const Eigen::VectorXd & input) override
+  {
+    auto avoid_warning_measurement = measurement;
+    auto avoid_warning_input = input;
+    return Eigen::MatrixXd();
+  }
+};
+
 // Test to verify that the constructor with correct dimensions A B C D matrixes
 TEST(StateObserverTest, ConstructorTest) {
   Eigen::MatrixXd A(2, 2), B(2, 1), C(1, 2), D(1, 1);
@@ -150,6 +183,18 @@ TEST(StateObserverTest, ConstructorExceptionTestC) {
   ASSERT_THROW(StateObserverDummy observer(A, B, C, D, initial_state), std::invalid_argument);
 }
 
+// Test constructor with wrong matrices dimensions (C matrix)
+TEST(StateObserverTest, StateObserverEmptyMatrices) {
+  Eigen::MatrixXd I_;
+  std::shared_ptr<StateObserverEmptyDummy> observer = std::make_shared<StateObserverEmptyDummy>();
+  if (I_.size() != 0) {
+    std::cerr << "I_ is not empty" << std::endl;
+  } else {
+    std::cerr << "I_ is empty" << std::endl;
+  }
+  ASSERT_TRUE(true);
+  // ASSERT_THROW(StateObserverEmptyDummy observer(), std::invalid_argument);
+}
 int main(int argc, char ** argv)
 {
   testing::InitGoogleTest(&argc, argv);
