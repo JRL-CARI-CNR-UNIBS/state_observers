@@ -78,12 +78,12 @@ Contributions to this project are welcome! You can contribute by reporting bugs,
 ## TODO List
 
 - [x] Base class of state observer, Luenberger, Kalman Filter
-- [ ] Create a class to represent a dynamic system (general and linear) in state-space format that contains `A`, `B`, `C`, `D` matrices (or `f`, `g`, etc. functions) with update methods, and pass it to state observer classes as input (not directly `A`, `B`, `C`, `D`)
-- [ ] Implement Extended Kalman Filter (EKF), Unscented Kalman Filter (UKF), Particle Filter, etc.
 - [x] Test State Observer Base Class
 - [x] Test Luenberger, Kalman Filter
 - [x] Set up GitHub Workflows for Continuous Integration (CI)
 - [x] Implement ROS 2 Pluginlib support for `StateObserver`, `Luenberger`, `KalmanFilter`, and their parameter classes
+- [ ] Create a class to represent a dynamic system (general and linear) in state-space format that contains `A`, `B`, `C`, `D` matrices (or `f`, `g`, etc. functions) with update methods, and pass it to state observer classes as input (not directly `A`, `B`, `C`, `D`)
+- [ ] Implement Extended Kalman Filter (EKF), Unscented Kalman Filter (UKF), Particle Filter, etc.
 
 ## License
 
