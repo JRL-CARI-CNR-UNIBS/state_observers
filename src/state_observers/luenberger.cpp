@@ -97,6 +97,8 @@ void Luenberger::set_observer_gain(const Eigen::MatrixXd & L)
   L_ = L;
 }
 
+Eigen::VectorXd Luenberger::predict(const Eigen::VectorXd& input) { return x_ = A_ * x_ + B_ * input; }
+
 Eigen::MatrixXd Luenberger::update(const Eigen::VectorXd & measurement)
 {
   return update(measurement, Eigen::VectorXd::Zero(B_.cols()));

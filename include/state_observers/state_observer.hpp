@@ -108,6 +108,8 @@ public:
    */
   virtual Eigen::VectorXd open_loop_update();
 
+  virtual Eigen::VectorXd predict(const Eigen::VectorXd& input);
+
   /**
    * @brief Update the observer with a measurement.
    *

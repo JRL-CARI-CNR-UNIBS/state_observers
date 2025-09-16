@@ -188,6 +188,8 @@ public:
    */
   Eigen::VectorXd open_loop_update() override;
 
+  Eigen::VectorXd predict(const Eigen::VectorXd& input) override;
+
   /**
    * @brief Update the process noise covariance matrix `Q`.
    *

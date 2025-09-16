@@ -168,9 +168,29 @@ KalmanFilter::set_parameters(const StateObserverParam::SharedPtr state_observer_
   P_ = P0;
 }
 
+Eigen::VectorXd KalmanFilter::predict(const Eigen::VectorXd& input) {
+  x_ = A_ * x_ + B_ * input;
+  P_ = A_ * P_ * A_.transpose() + Q_;
+  return x_;
+}
+
 Eigen::MatrixXd KalmanFilter::update(const Eigen::VectorXd & measurement)
 {
-  return update(measurement, Eigen::VectorXd::Zero(B_.cols()));
+  // Update
+  K_ = P_ * C_.transpose() * (C_ * P_ * C_.transpose() + R_).inverse();
+
+
+  x_ = x_ + K_ * (measurement - C_ * x_);
+  P_ = (I_ - K_ * C_) * P_;
+
+  // if (D_.size() != 0) {
+  // y_ = C_ * x_ + D_ * input;
+  // } else {
+  // y_ = C_ * x_;
+  // }
+  y_ = C_ * x_;
+
+  return y_;
 }
 
 Eigen::VectorXd KalmanFilter::open_loop_update()
@@ -229,10 +249,6 @@ void KalmanFilter::update_qr(
   const Eigen::MatrixXd & new_Q,
   const Eigen::MatrixXd & new_R)
 {
-  std::cerr << new_Q << std::endl;
-  std::cerr << new_R << std::endl;
-  std::cerr << A_.rows() << std::endl;
-  std::cerr << A_.cols() << std::endl;
   if (new_Q.rows() != A_.rows() || new_Q.cols() != A_.cols()) {
     throw std::invalid_argument("Process covariance matrix must have dimensions n x n.");
   }

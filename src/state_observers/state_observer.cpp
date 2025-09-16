@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include "state_observers/state_observer.hpp"
+#include <cstdio>
 
 namespace state_observer
 {
@@ -67,6 +68,13 @@ Eigen::VectorXd StateObserver::open_loop_update()
   y_ = C_ * x_;
   return y_;
 }
+
+Eigen::VectorXd StateObserver::predict(const Eigen::VectorXd& input) {
+  x_ = A_ * x_ + B_ * input;
+  // y_ = C_ * x_;
+  return x_;
+}
+
 
 void StateObserver::set_state_transition_matrix(const Eigen::MatrixXd & A)
 {

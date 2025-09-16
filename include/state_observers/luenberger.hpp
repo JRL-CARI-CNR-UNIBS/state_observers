@@ -109,6 +109,8 @@ public:
    */
   void set_observer_gain(const Eigen::MatrixXd & L);
 
+  Eigen::VectorXd predict(const Eigen::VectorXd& input) override;
+
   /**
    * @brief Update the observer with a measurement.
    *
